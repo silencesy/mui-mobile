@@ -1,0 +1,183 @@
+body {
+    background-color: #E8E8E8;
+}
+
+.layout {
+	max-width: 750px;
+	margin: 0 auto;
+	position: relative;
+
+}
+
+.clearfix::after,
+.clearfix::before{
+    content: ".";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+
+/*home页*/ 
+.home-layout .mui-content {
+	background-color: #E8E8E8;
+}
+.mui-bar {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 1px #dedede;
+    box-shadow: 0 0 1px #dedede;
+}
+
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: #f24827;
+}
+
+.mui-bar-tab .mui-tab-item {
+    color: #919191;
+}
+
+/*搜索框开始*/
+.search-box {
+	margin: 10px;
+} 
+
+.search-box input {
+	padding-left: 40px;
+}
+
+/*搜索框结束*/ 
+
+
+
+/*cart页*/ 
+a {
+	color: #919191;
+}
+
+.mui-bar .mui-btn-link {
+	color: #919191;
+}
+
+#Cart .mui-table-view {
+	margin-top: 54px;
+}
+
+/*选中颜色*/ 
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before {
+	color: #f6442b;
+}
+
+.mui-checkbox.mui-left input[type=checkbox], .mui-radio.mui-left input[type=radio] {
+	left: 0;
+}
+
+.mui-input-row label {
+    padding: 12px 15px 3px 0;
+}
+.mui-checkbox.mui-left label, .mui-radio.mui-left label {
+	padding-left: 33px;
+	padding-right: 0px;
+}
+.mui-slider-handle label > div {
+	float: left;
+}
+.mui-slider-handle label > .product-list-img {
+	width: 35%;
+}
+
+.mui-slider-handle label > .product-list-img img {
+	width: 100%;
+}
+
+.mui-slider-handle label > .product-list-info {
+	width: 65%;
+	padding-left: 10px;
+}
+
+.mui-slider-handle label > .product-list-info p {
+	word-wrap:break-word;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2; 
+	min-height: 45px;
+	color: #333;
+}
+
+#Cart .mui-table-view-cell {
+	padding: 0px 5px; 
+	margin-bottom: 10px;
+	background-color: #fff;
+}
+
+#Cart .mui-table-view {
+	background-color: #E8E8E8;
+}
+
+
+
+#Cart .mui-table-view-cell>.mui-slider-left>.mui-btn,#Cart .mui-table-view-cell>.mui-slider-right>.mui-btn {
+	padding: 0 15px;
+}
+#cart .product-list-info p {
+	word-break:break-all;
+}
+ 
+// .product-list-info .product-buy-info {
+// 	position: absolute;
+// 	left: 0;
+// 	bottom: 0;
+// }
+
+.mui-checkbox input[type=checkbox], .mui-radio input[type=radio] {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: inline-block;
+    width: 28px;
+    height: 26px;
+    border: 0;
+    outline: 0!important;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+.mui-table-view-cell:after {
+	background-color: transparent;
+}
+
+.mui-slider-handle .product-list-price {
+	color: #f6442b;
+}
+
+.mui-slider-handle .product-list-number {
+	color: #919191;
+}
+/*more-page开始*/
+.more-page>div {
+	clear: both;
+	margin-bottom: 10px;
+}
+.more-page>div:last-child {
+	margin-bottom: 0;
+}
+
+.more-page img {
+	float: left;
+	width: 100%;
+	height: auto;
+} 
+/*more-page结束*/ 
