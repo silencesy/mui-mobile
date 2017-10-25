@@ -2,6 +2,10 @@ body {
     background-color: #E8E8E8;
 }
 
+.smart-theme-color {
+	background-color: #f6442b;
+}
+
 .layout {
 	max-width: 640px;
 	margin: 0 auto;
@@ -27,6 +31,9 @@ body {
 	float: right;
 }
 
+.mui-title {
+	color: #333;
+}
 
 /*home页*/ 
 .home-layout .mui-content {
@@ -268,11 +275,82 @@ a {
 /*more-page结束*/ 
 
 /*搜索结果页*/
-
-.search-result-layout .mui-search {
-	position: absolute;
-    left: 44px;
-    top: 1px;
-    width: 84%; 
+.result-ul .list-li-img {
+	float: left;
+	width: 40%;
 }
-    
+
+.result-ul .list-li-img img {
+	width: 100%;
+}
+
+.result-ul .product-list-info {
+	width: 60%;
+	float: left;
+	padding-left: 10px;
+}
+
+.result-ul .product-list-info p {
+	    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    color: #333;
+}
+
+.mui-pull-bottom-pocket {
+    position: relative;
+    bottom: 0;
+    height: 60px;
+}
+
+.mui-scroll .result-ul .product-list-info span {
+	color: #f6442b;
+}
+
+.result-page .mui-table-view:after, .result-page .mui-table-view:before {
+    background-color: transparent;
+}
+
+
+
+.result-page .mui-table-view-cell {
+	margin-top: 10px;
+	background-color: #fff;
+}
+
+.result-page .mui-table-view {
+	background-color: transparent;
+}
+
+.result-page .mui-table-view-cell:after {
+	background-color: transparent;
+}
+
+/*no-address*/ 
+.no-address {
+	color: #555353;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50%;
+    font-weight: 500;
+}
+
+.mui-bar-footer.no-address {
+	background-color: #f6442b;
+}
+
+.no-address a {
+	display: inline-block;
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	background-color: #f6442b;
+	text-align: center;
+	color: #fff;
+}
+
+
+
+
