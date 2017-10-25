@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_py0uecagdjrcz0k9.css">
+	<style type="text/css">
+		#list {
+			/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+			margin-top: -1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout cart-layout" id="app">
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">Cart</h1>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right">Edit</button>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="./home.html">
+				<span class="mui-icon iconfont icon-shanghu1"></span>
+				<span class="mui-tab-label">Home</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="#cart">
+				<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">Cart</span>
+			</a>
+			<a class="mui-tab-item" href="./me.html">
+				<span class="mui-icon iconfont icon-me"></span>
+				<span class="mui-tab-label">Me</span>
+			</a>
+			<a class="mui-tab-item" href="./more.html">
+				<span class="mui-icon iconfont icon-iconfonthome"></span>
+				<span class="mui-tab-label">More</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div id="cart" class="cart mui-control-content mui-active">
+				<ul id="cartList" class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn mui-btn-red">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<label>
+									<div class="product-list-img">
+										<img src="images/prodeuctdemo.png" alt="">
+									</div>
+									<div class="product-list-info">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+										<div class="product-buy-info clearfix">
+											<span class="product-list-price fl">￥23.00</span>
+											<span class="product-list-number fr">x1</span>
+										</div>
+									</div>
+								</label>
+								<input name="checkbox" class="listCheckBox" value="Item 1" type="checkbox" >
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn mui-btn-red">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<label>
+									<div class="product-list-img">
+										<img src="images/prodeuctdemo.png" alt="">
+									</div>
+									<div class="product-list-info">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+										<p>neixing</p>
+										<div class="product-buy-info clearfix">
+											<span class="product-list-price fl">￥23.00</span>
+											<span class="product-list-number fr">x1</span>
+										</div>
+									</div>
+								</label>
+								<input name="checkbox" class="listCheckBox" value="Item 1" type="checkbox" >
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn mui-btn-red">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<label>
+									<div class="product-list-img">
+										<img src="images/prodeuctdemo.png" alt="">
+									</div>
+									<div class="product-list-info">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+										<p>neixing</p>
+										<div class="product-buy-info clearfix">
+											<span class="product-list-price fl">￥23.00</span>
+											<span class="product-list-number fr">x1</span>
+										</div>
+									</div>
+								</label>
+								<input name="checkbox" class="listCheckBox" value="Item 1" type="checkbox" >
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn mui-btn-red">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<label>
+									<div class="product-list-img">
+										<img src="images/prodeuctdemo.png" alt="">
+									</div>
+									<div class="product-list-info">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+										<p>neixing</p>
+										<div class="product-buy-info clearfix">
+											<span class="product-list-price fl">￥23.00</span>
+											<span class="product-list-number fr">x1</span>
+										</div>
+									</div>
+								</label>
+								<input name="checkbox" class="listCheckBox" value="Item 1" type="checkbox" >
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn mui-btn-red">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<label>
+									<div class="product-list-img">
+										<img src="images/prodeuctdemo.png" alt="">
+									</div>
+									<div class="product-list-info">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+										<p>neixing</p>
+										<div class="product-buy-info clearfix">
+											<span class="product-list-price fl">￥23.00</span>
+											<span class="product-list-number fr">x1</span>
+										</div>
+									</div>
+								</label>
+								<input name="checkbox" class="listCheckBox" value="Item 1" type="checkbox" >
+							</div>
+						</div>
+					</li>
+					<!-- <product-lists></product-lists> -->
+					
+				
+					
+				</ul>
+				<!-- 结算导航栏 -->
+				<nav class="settlement-box" id="checkAll">
+					<div class="mui-input-row mui-checkbox mui-left">
+						<label >All</label>
+						<input name="checkbox" id="checkAllInput" value="Item 1" type="checkbox" >
+					</div>
+					<div class="total">
+						Total:<span>￥0</span>
+					</div>
+					<span class="buy-btn">To pay</span>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/vue.js"></script>
+	<script>
+		
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+		  interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		(function($) {
+			//第一个demo，拖拽后显示操作图标，点击操作图标删除元素；
+			$('#cartList').on('tap', '.mui-btn', function(event) {
+				var elem = this;
+				var li = elem.parentNode.parentNode;
+				mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+					if (e.index == 0) {
+						li.parentNode.removeChild(li);
+					} else {
+						setTimeout(function() {
+							$.swipeoutClose(li);
+						}, 0);
+					}
+				});
+			});
+			var btnArray = ['确认', '取消'];
+		})(mui);
+		
+	    mui('.settlement-box').on('change', 'input', function() {
+			var value = this.checked;
+			mui('.listCheckBox').each(function() {
+				if (value) {
+					this.checked = true;
+				} else {
+					this.checked = false;
+				}
+			});
+			var i = 0;
+	        mui(".listCheckBox").each(function() {
+	            if (this.checked) {
+	                i++;
+	            }
+	        })  
+	        console.log(i);
+		});
+		mui('.mui-table-view').on('tap','li',function(){
+            // allLight();
+            console.log(mui('input:checked'));
+            
+        });
+		function allLight() {
+        	
+
+
+	        if (n === (mui(".listCheckBox").length-1)) {
+	        	document.getElementById('checkAllInput').checked = true;;
+	        } else {
+	        	document.getElementById('checkAllInput').checked = false;
+	        }
+	        
+	    }
+		mui('.mui-bar-tab').on('tap','a',function(){
+            window.location.href = this.getAttribute('href');
+        });
+	</script>
+</body>
+</html>

@@ -19,24 +19,31 @@
 		<header id="header" class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">Add a new address</h1>
-			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" id="input_check">Done</button>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right add-btn">Done</button>
 		</header>
 		<div class="mui-content">
 			<div class="mui-input-group" id="inputAdd">
 				<div class="mui-input-row">
 					<label>Full name：</label>
-					<input type="text" class="mui-input-clear" id="col1" placeholder="" >
+					<input type="text" class="mui-input-clear" id="Fullname" placeholder="" >
 				</div>
 				<div class="mui-input-row">
 					<label>Phone number：</label>
-					<input type="text" class="mui-input-clear" id="col2" placeholder="" >
+					<input type="text" class="mui-input-clear" id="Phone" placeholder="" >
 				</div>
-				<div class="mui-input-row">
-					<label id='showCityPicker3'>Select region：</label>
-					<div id='cityResult3'></div>					
-				</div>
+				<!-- 三级联动开始 -->
+	    		<div id="province-city-district" class="edit-data-item">
+	    			<span style="display: inline-block;float: left;">Select region：</span>
+	    			<div class="edit-data-item-right" style="float: right;">
+	    				<input id="province-city-district-text" type="text" value="" readonly="readonly" />
+	    				<input type="hidden" id="province" value="" />
+	    				<input type="hidden" id="city" value="" />
+	    				<input type="hidden" id="area" value="" />
+	    			</div>
+	    		</div>
+	    		<!-- 三级联动结束 -->
 				<div class="mui-input-row mui-input-row-area">
-					<textarea id="textarea" rows="5" placeholder="Please fill in the details"></textarea>
+					<textarea id="textarea" rows="5" placeholder="Please fill in the details" class="fill"></textarea>
 				</div>
 			</div> 
 
@@ -49,62 +56,16 @@
 
 
 	<script src="js/mui.min.js"></script>
-	<script src="js/mui.picker.js"></script>
-	<script src="js/mui.poppicker.js"></script>
-	<script src="js/city.data.js"></script>
-	<script src="js/city.data-3.js"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/server.categories.data-2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/edit-user.js" type="text/javascript" charset="utf-8"></script>
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			//			if(String.prototype.trim === undefined) { // fix for iOS 3.2
-			//				String.prototype.trim = function() {
-			//					return this.replace(/^\s+|\s+$/g, '');
-			//				};
-			//			}
-			document.getElementById("input_check").addEventListener('click', function() {
-				var check = true;
-				mui("#inputAdd input").each(function() {
-					//若当前input为空，则alert提醒 
-					if(!this.value || this.value.trim() == "") {
-						var label = this.previousElementSibling;
-						mui.alert(label.innerText + "不允许为空");
-						check = false;
-						return false;
-					}
-				}); //校验通过，继续执行业务逻辑 
-				check && mui.alert('验证通过!')
-			})
 
-		});
 
-		(function($, doc) {
-			$.init();
-			$.ready(function() {
-				/**
-				 * 获取对象属性的值
-				 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
-				 * @param {Object} obj 对象
-				 * @param {String} param 属性名
-				 */
-				var _getParam = function(obj, param) {
-					return obj[param] || '';
-				};
 
-				//					//级联示例
-				var cityPicker3 = new $.PopPicker({
-					layer: 3
-				});
-				cityPicker3.setData(cityData3);
-				var showCityPickerButton = doc.getElementById('showCityPicker3');
-				var cityResult3 = doc.getElementById('cityResult3');
-				showCityPickerButton.addEventListener('tap', function(event) {
-					cityPicker3.show(function(items) {
-						cityResult3.innerText = "你选择的城市是:" + _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
-						//返回 false 可以阻止选择框的关闭
-						//return false;
-					});
-				}, false);
-			});
-		})(mui, document);
-	</script>		
+
+	</script>
 </body>
 </html>

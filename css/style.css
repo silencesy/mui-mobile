@@ -3,7 +3,7 @@ body {
 }
 
 .layout {
-	max-width: 750px;
+	max-width: 640px;
 	margin: 0 auto;
 	position: relative;
 
@@ -38,7 +38,7 @@ body {
 .mui-bar {
     background-color: #fff;
     // -webkit-box-shadow: 0 0 1px #dedede;
-    // box-shadow: 0 0 1px #dedede;
+    // box-shadow: 0 0 2px #dedede;
 }
 
 .mui-bar-tab .mui-tab-item.mui-active {
@@ -67,12 +67,13 @@ a {
 	color: #919191;
 }
 
-.mui-bar .mui-btn-link {
-	color: #919191;
+
+.cart-layout .mui-bar-tab~.mui-content {
+	padding-bottom: 110px;
 }
 
-#Cart .mui-table-view {
-	margin-top: 54px;
+.mui-bar .mui-btn-link {
+	color: #919191;
 }
 
 /*选中颜色*/ 
@@ -114,34 +115,31 @@ a {
 	display:-webkit-box; 
 	-webkit-box-orient:vertical;
 	-webkit-line-clamp:2; 
-	min-height: 45px;
 	color: #333;
 }
 
-#Cart .mui-table-view-cell {
-	padding: 0px 5px; 
-	margin-bottom: 10px;
+.cart .mui-table-view-cell {
+	padding: 0px 7px 0px 5px; 
 	background-color: #fff;
 }
 
-#Cart .mui-table-view {
+.cart .mui-table-view .mui-table-view-cell {
+	margin-top: 10px;
+	background-color: #fff;
+}
+
+.cart .mui-table-view {
 	background-color: #E8E8E8;
 }
 
 
 
-#Cart .mui-table-view-cell>.mui-slider-left>.mui-btn,#Cart .mui-table-view-cell>.mui-slider-right>.mui-btn {
+.cart .mui-table-view-cell>.mui-slider-left>.mui-btn,.cart .mui-table-view-cell>.mui-slider-right>.mui-btn {
 	padding: 0 15px;
 }
-#cart .product-list-info p {
-	word-break:break-all;
+.cart .mui-table-view:after,.cart .mui-table-view:before {
+	    background-color: transparent;
 }
- 
-// .product-list-info .product-buy-info {
-// 	position: absolute;
-// 	left: 0;
-// 	bottom: 0;
-// }
 
 .mui-checkbox input[type=checkbox], .mui-radio input[type=radio] {
     position: absolute;
@@ -158,7 +156,7 @@ a {
     background-color: transparent;
     -webkit-appearance: none;
 }
-.mui-table-view-cell:after {
+.cart .mui-table-view-cell:after {
 	background-color: transparent;
 }
 
@@ -169,13 +167,100 @@ a {
 .mui-slider-handle .product-list-number {
 	color: #919191;
 }
+.settlement-box {
+	position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    height: 52px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom: 0;
+    background-color: #fff;
+    backface-visibility: hidden;
+    padding-right: 0;
+    border-top: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
+}
+.settlement-box .mui-input-row {
+	width: 23%;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	color: #919191;
+}
+
+.settlement-box .total {
+	color: #919191;
+	width: 25%;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+}
+
+.settlement-box .total span {
+	color: #f6442b;
+}
+
+.settlement-box .buy-btn {
+	width: 30%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	background-color: #f6442b;
+	float: right;
+}
+
+/*个人页面*/
+.personal-page-title {
+	background-color: #fff;
+	padding: 20px;
+}
+
+.img-personal {
+	width: 60%;
+} 
+
+.ewm-logo {
+	width: 30%;
+	text-align: center;
+}
+
+.img-personal img {
+	width: 35%;
+	float: left;
+}
+
+.img-personal span {
+	display: inline-block;
+	height: 100%;
+	line-height: 40px;
+	float: left;
+}
+
+.ewm-logo img {
+	width: 60%;
+	height: auto;
+}
+
+.me .mui-table-view {
+	margin-top: 10px;
+}
+
+.me .mui-table-view-cell:last-child .mui-navigate-right:after {
+	display: none;
+}
+
+.me .mui-table-view:before {
+	    background-color: transparent;
+}
+
 /*more-page开始*/
 .more-page>div {
 	clear: both;
 	margin-bottom: 10px;
-}
-.more-page>div:last-child {
-	margin-bottom: 0;
 }
 
 .more-page img {
@@ -186,19 +271,17 @@ a {
 /*more-page结束*/ 
 
 
-/*add-add*/ 
+/*add-address开始*/ 
 #inputAdd {
 	padding-right: 15px;
 }
 #inputAdd .mui-input-row label {
-	width: 40%;
+	width: 48%;
 	padding-right: 0;
 	padding-left: 15px;
 }
 #inputAdd .mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea {
 	width: 60%;
-}
-#inputAdd .mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea {
 	padding-right: 0;
 }
 .mui-input-group .mui-input-row-area {
@@ -219,3 +302,57 @@ a {
 .mui-checkbox.mui-left label, .mui-radio.mui-left label {
 	padding-left: 47px;
 }
+
+.edit-data-item {
+    padding: 20px 20px;
+    border-bottom: 1px solid #e1e1e4;
+    padding-left: 100px;
+    position: relative;
+}
+.edit-data-item span {
+    width: 40%;
+    // font-size: 14px;
+    // color: #5F5F5F;
+    // text-align: justify;
+    // text-align-last: justify;
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.edit-data-item .edit-data-item-right input[type=text] {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+    height: 36px;
+}
+.edit-data-item-right {
+	float: none !important;
+	position: absolute;
+    top: 8%;
+    left: 36%;
+}
+
+
+
+
+
+
+
+
+/*add-address结束*/ 
+
+
+
+
+
+/*搜索结果页*/
+
+.search-result-layout .mui-search {
+	position: absolute;
+    left: 44px;
+    top: 1px;
+    width: 84%; 
+}
+    
+
