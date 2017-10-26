@@ -70,6 +70,10 @@ a {
 	color: #919191;
 }
 
+.mui-bar-tab~.mui-content {
+	background-color: #E8E8E8;
+}
+
 
 .cart-layout .mui-bar-tab~.mui-content {
 	padding-bottom: 110px;
@@ -119,6 +123,7 @@ a {
 	-webkit-box-orient:vertical;
 	-webkit-line-clamp:2; 
 	color: #333;
+	margin-bottom: 5px;
 }
 
 .cart .mui-table-view-cell {
@@ -215,6 +220,30 @@ a {
 	background-color: #f6442b;
 	float: right;
 }
+
+/*cartempty*/ 
+.cart-empty-box {
+	text-align: center;
+	margin-top: 40%;
+}
+.cart-empty-box .icon-gouwuche {
+	font-size: 45px;
+	color: #919191;
+}
+
+.cart-empty-box p {
+	color: #555353;
+	margin-top: 5px;
+}
+
+.cart-empty-box a {
+	display: inline-block;
+	background-color: #f6442b;
+	color: #fff;
+	padding: 7px 15px;
+}
+
+
 
 /*个人页面*/
 .personal-page-title {
@@ -545,6 +574,14 @@ a {
 	float: right;
 	color: #919191;
 }
+<<<<<<< HEAD
+=======
+
+// .result-ul .product-list-info .product-buy-info {
+// 	margin-top: 5px;
+// }
+
+>>>>>>> 6165577fcf5d8e632bc4b5bc3eca50ba58da7777
 .mui-pull-bottom-pocket {
     position: relative;
     bottom: 0;
