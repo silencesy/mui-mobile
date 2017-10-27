@@ -54,8 +54,8 @@ body {
 }
 .mui-bar {
     background-color: #fff;
-    // -webkit-box-shadow: 0 0 1px #dedede;
-    // box-shadow: 0 0 2px #dedede;
+    -webkit-box-shadow: 0 0 1px #dedede;
+    box-shadow: 0 0 2px #dedede;
 }
 
 .mui-bar-tab .mui-tab-item.mui-active {
