@@ -112,11 +112,17 @@
 		getSelectedItems: function() {
 			var self = this;
 			var items = [];
+<<<<<<< HEAD
 			for (var i in self.pickers) {    
 				if(self.pickers.hasOwnProperty(i)) { // 修复for in会访问继承属性造成items报错情况
 					var picker = self.pickers[i];
 					items.push(picker.getSelectedItem() || {});
 				}
+=======
+			for (var i in self.pickers) {
+				var picker = self.pickers[i];
+				items.push(picker.getSelectedItem() || {});
+>>>>>>> 3f8edfac062a2766e048de563145adc83a0b7678
 			}
 			return items;
 		},

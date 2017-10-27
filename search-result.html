@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>search-result</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -20,12 +20,11 @@
 <body>
 	<div class="layout search-result-layout">
 		<header id="header" class="mui-bar mui-bar-nav">
-<!-- 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a> -->
+			<!-- <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a> -->
 			<div class="mui-input-row mui-search">
 			    <input type="search" class="mui-input-clear" placeholder="">
 			</div>
 		</header>
-		<div class="mui-content"></div>
 		<nav class="mui-bar mui-bar-tab">
 			<a class="mui-tab-item" href="./home-page.html">
 				<span class="mui-icon iconfont icon-shanghu1"></span>
@@ -44,41 +43,81 @@
 				<span class="mui-tab-label">More</span>
 			</a>
 		</nav>
+		<div class="mui-content">
+			<div class="wrapper">
+				<ul class="wall">
+					<li class="waterfall">
+						<a href="#">
+							<img src="images/yashilandai.jpg" />
+							<p>Shanghai Restaurant Review: Kun Thai Shanghai Restaurant Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img src="images/labi.jpg" />
+							<p>Shanghai Restaurant Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img src="images/kouhong.jpg" />
+							<p>Shanghai Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img src="images/amani.jpg" />
+							<p>Shanghai Restaurant Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img src="images/yashilandai.jpg" />
+							<p>Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img src="images/kouhong.jpg" />
+							<p>Shanghai Restaurant</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img src="images/amani.jpg" />
+							<p>Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+
+
 		
 	</div>
-
-
-	<script src="js/mui.min.js"></script>
-
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jaliswall.js" type="text/javascript"></script>
 	<script>
-		
-		//启用双击监听
-		mui.init({
-			gestureConfig:{
-				doubletap:true
-			},
-			subpages:[{
-				url:'pullrefresh_sub.html',
-				id:'pullrefresh_sub.html',
-				styles:{
-					top: '45px',
-					bottom: '0px',
-				}
-			}]
+		$(function(){
+			$('.wall').jaliswall({ item: '.waterfall' });
 		});
-		var contentWebview = null;
-		document.querySelector('header').addEventListener('doubletap',function () {
-			if(contentWebview==null){
-				contentWebview = plus.webview.currentWebview().children()[0];
-			}
-			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
-		});
-		mui('.mui-bar-tab').on('tap','a',function(){
-            console.log(this.getAttribute('href'));
-            window.location.href = this.getAttribute('href');
-        })
-
-		
 	</script>
 </body>
 </html>
