@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/mui.picker.all.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css"/>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_smu5e7hurnjw0zfr.css">
+	<style type="text/css">
+		#list {
+			/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+			margin-top: -1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout home-layout">
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="./home-page.html">
+				<span class="mui-icon iconfont icon-shanghu1"></span>
+				<span class="mui-tab-label">Home</span>
+			</a>
+			<a class="mui-tab-item" href="./cart.html">
+				<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">5</span></span>
+				<span class="mui-tab-label">Cart</span>
+			</a>
+			<a class="mui-tab-item" href="./me.html">
+				<span class="mui-icon iconfont icon-me"></span>
+				<span class="mui-tab-label">Me</span>
+			</a>
+			<a class="mui-tab-item" href="./more.html">
+				<span class="mui-icon iconfont icon-iconfonthome"></span>
+				<span class="mui-tab-label">More</span>
+			</a>
+		</nav>
+		
+		<div class="mui-content">
+			<div class="home-search-group">
+				<div class="clearfix">
+					<span id='showUserPicker'>All <i class="fr iconfont icon-xiangxiajiantou"></i></span>
+					<input id="searchInput" class="searchInput" type="text" placeholder="Search"/>
+					<i class="iconfont icon-sousuo"></i>
+				</div>
+			</div>
+			<!-- 首页轮播开始 -->
+			<div class="home-carousel">
+			 	<div class="swiper-container home-banner-carousel">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+			            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+			            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+			            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+		    			</div>
+	    			<div class="swiper-pagination"></div>
+			</div>
+			<!-- 首页轮播结束 -->
+			<div class="home-section-box">
+				<div class="section-head section-head-one">
+					<span class="section-head-text">Featured shops</span>
+					<a href="#">More</a>
+				</div>
+				<div class="home-product-carousel-box">
+					<div class="swiper-container home-product-carousel">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            
+				        </div>
+				        <!-- Add Pagination -->
+				        <div class="swiper-scrollbar"></div>
+				    </div>
+				</div>
+			</div>
+			<div class="home-ad">
+				<a href="#">
+					<img src="images/home-ad1.jpg" alt="" />
+				</a>
+			</div>
+			<div class="home-section-box">
+				<div class="section-head">
+					<span class="section-head-text">Featured products</span>
+					<a href="#">More</a>
+				</div>
+				<div class="home-product-carousel-box">
+					<div class="swiper-container home-product-carousel">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            <div class="swiper-slide product-lists">
+				            		<a href="#">
+				            			<img src="images/products.jpg" alt="" />
+									<p>adidas</p>
+				            		</a>
+				            </div>
+				            
+				        </div>
+				        <!-- Add Pagination -->
+				        <div class="swiper-scrollbar"></div>
+				    </div>
+				</div>
+			</div>
+			<div class="home-ad">
+				<a href="#">
+					<img src="images/home-ad2.jpg" alt="" />
+				</a>
+			</div>
+			
+		</div>
+	</div>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.all.js"></script>
+	<script src="js/mui.poppicker.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script>
+
+
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		mui('.mui-bar-tab').on('tap','a',function(){
+            window.location.href = this.getAttribute('href');
+        });
+        var homeBannerCarousel = new Swiper('.home-banner-carousel',{
+			loop: true,
+			autoplay: 4000,
+			speed: 1000,
+			autoplayDisableOnInteraction: false,
+			pagination : '.swiper-pagination',
+			paginationClickable :true				
+		});
+		var homeProductCarousel = new Swiper('.home-product-carousel',{
+	        scrollbar: '.swiper-scrollbar',
+	        scrollbarHide: true,
+	        slidesPerView: 'auto',
+	        freeMode : true,
+//	        centeredSlides: true,
+	        spaceBetween: 5,
+	        slidesPerView: 3.5,
+	        grabCursor: true
+		});
+		//普通示例
+		var userPicker = new mui.PopPicker();
+		userPicker.setData([{
+			value: 'All',
+			text: 'All'
+		},{
+			value: 'Shops',
+			text: 'Shops'
+		}, {
+			value: 'Products',
+			text: 'Products'
+		}, {
+			value: 'Ticketing',
+			text: 'Ticketing'
+		}, {
+			value: 'Coupons',
+			text: 'Coupons'
+		}]);
+		var showUserPickerButton = document.getElementById('showUserPicker');
+		showUserPickerButton.addEventListener('tap', function(event) {
+			userPicker.show(function(items) {
+				showUserPickerButton.innerHTML = items[0].text + '<i class="iconfont icon-xiangxiajiantou fr"></i>';
+//				return false;
+			});
+		}, false);
+//		mui.plusReady(function(){
+//			var gallery = mui('.mui-slider');
+//			gallery.slider({
+//				interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+//			});
+//			document.getElementById('cart').addEventListener('tap',function(){
+//				mui.openWindow({
+//					url: 'cart.html',
+//					id: 'cart.html'
+//				});
+//			});
+//			
+//		});
+
+			
+		  	
+
+	</script>
+</body>
+</html>

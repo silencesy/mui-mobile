@@ -1,9 +1,19 @@
+/*字体引用*/
+@font-face {
+    font-family: lcallig;
+    font-weight: bold;
+    font-style: normal;
+
+    src: url('../fonts/lcallig.ttf') format('truetype');
+}
+
+
 body {
     background-color: #E8E8E8;
 }
 
 .smart-theme-color {
-	background-color: #f6442b;
+	background-color: #f81db8;
 }
 
 .layout {
@@ -36,6 +46,10 @@ body {
 }
 
 /*home页*/ 
+
+
+
+
 .home-layout .mui-content {
 	background-color: #E8E8E8;
 }
@@ -53,17 +67,203 @@ body {
     color: #919191;
 }
 
-/*搜索框开始*/
-.search-box {
-	margin: 10px;
-} 
-
-.search-box input {
-	padding-left: 40px;
+.mui-bar {
+	max-width: 640px;
+	top: 0;
+	bottom: auto;
+	margin: auto;
 }
 
-/*搜索框结束*/ 
 
+
+/*底部导航栏*/
+.mui-bar-tab {
+	top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 640px;
+}
+    
+ /*首页轮播*/
+.home-carousel {
+    width: 100%;
+    position: relative;
+}
+
+.home-carousel .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.home-carousel .swiper-container .swiper-wrapper .swiper-slide img{
+    width: 100%;
+    height: 100%;
+}
+
+.home-carousel .swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+}
+
+.home-carousel .swiper-pagination-bullet {
+	background-color: #cf76b8;
+}
+
+.home-carousel .swiper-pagination-bullet-active {
+	background-color: #fff;
+}
+
+
+
+.home-search-group input,.home-search-group textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    -webkit-appearance: none;
+}
+
+.home-search-group .mui-btn,
+.home-search-group button,
+.home-search-group input[type=button],
+.home-search-group input[type=reset],
+.home-search-group input[type=submit] {
+	    border: 1px solid transparent;
+}
+
+
+/*搜索框结束*/ 
+.home-search-group {
+	position: fixed;
+	max-width: 640px;
+	top: 20px;
+	left: 0px;
+	right: 0px;
+	bottom: auto;
+	margin: auto;
+	z-index: 2;
+	background-color: transparent;
+	height: 35px;
+	padding: 0 10px;
+}
+
+.home-search-group > div {
+	width: 100%;
+	height: 35px;
+	background-color: rgba(255,255,255,0.3);
+	border-radius: 4px;
+}
+
+
+
+.home-search-group span {
+	height: 35px;
+	line-height: 35px;
+	background-color: transparent;
+	color: #fff;
+	width: 30%;
+	padding-left: 10px;
+	float: left;
+}
+
+.home-search-group input {
+	background-color: transparent;
+	width: 70%;
+	height: 35px;
+	float: left;
+	color: #fff;
+}
+
+.iconfont.icon-sousuo {
+	position: absolute;
+    top: 8px;
+    right: 24px;
+    color: #fff;
+}
+
+.home-section-box {
+	background-color: #fff;
+}
+
+.home-section-box .section-head {
+	height: 40px;
+	background-color: #f6442b;
+	margin-top: 0;
+	padding: 0 10px;
+	
+}
+
+.home-section-box .section-head .section-head-text {
+	color: #fff;
+	line-height: 40px;
+	font-family: "lcallig";
+}
+.home-section-box .section-head.section-head-one {
+	margin-top: 5px;
+}
+
+/*.home-section-box .section-head:nth-child(1) {
+	height: 40px;
+	background-color: #f6442b;
+	margin-top: 5px;
+	padding: 0 10px;
+	
+}*/
+
+.home-section-box .section-head a {
+	float: right;
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	text-align: center;
+}
+
+.home-product-carousel-box {
+	margin: 10px;	
+}
+
+.home-product-carousel-box .product-lists p {
+	text-align: center;
+	color: #333;
+}
+
+.swiper-pagination-progress {
+	background-color: transparent;
+}
+
+.swiper-pagination-progress .swiper-pagination-progressbar {
+	background-color: #b6b6b6;
+}
+
+.swiper-scrollbar-drag {
+	background: rgba(0,0,0,0.2);
+}
+
+.home-ad {
+	margin: 10px 0;
+}
+
+.home-ad img {
+	width: 100%;
+	height: auto;
+}
+
+
+.home-search-group input::-webkit-input-placeholder {
+	color: #fff;
+}
+.home-search-group input:-moz-placeholder {
+	color: #fff;
+}
+.home-search-group input::-moz-placeholder {
+	color: #fff;
+}
+.home-search-group input:-ms-input-placeholder {
+	color: #fff;
+}
 
 
 /*cart页*/ 
@@ -181,8 +381,11 @@ a {
     z-index: 10;
     right: 0;
     left: 0;
+    top: auto;
     bottom: 50px;
     height: 52px;
+    margin: auto;
+    max-width: 640px;
     padding-right: 10px;
     padding-left: 10px;
     border-bottom: 0;
@@ -384,6 +587,57 @@ a {
 	color: #fff;
 }
 
+
+/*媒体查询*/
+@media screen and (min-width: 320px) and (max-width: 480px){
+    /*!*iPhone < 5 Portrait*!*/
+   .home-search-group span {
+		width: 32%;
+	}
+
+	.home-search-group input {
+		width: 68%;
+	}	
+    
+
+}
+
+@media screen and (min-width: 375px) and (max-width: 627px){
+    /*!*iPhone 6*!*/
+   .home-search-group span {
+		width: 27%;
+	}
+
+	.home-search-group input {
+		width: 73%;
+	}
+    
+
+}
+@media screen and (min-width: 414px) and (max-width: 736px){
+    /*!*iPhone 6+ Portrait*!*/
+   .home-search-group span {
+		width: 25%;
+	}
+
+	.home-search-group input {
+		width: 75%;
+	}
+   
+
+}
+@media screen and (min-width: 737px){
+    /*!*大屏*!*/
+   .home-search-group span {
+		width: 30%;
+	}
+
+	.home-search-group input {
+		width: 70%;
+	}
+    
+
+}
 
 
 
