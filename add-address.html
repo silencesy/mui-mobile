@@ -59,8 +59,8 @@
 
 
 	<script src="js/mui.min.js"></script>
-	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.all.js"></script>
+	<script src="js/mui.poppicker.js"></script>
 	<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 
@@ -100,10 +100,11 @@
 			})(mui, document);
 			
 			
-			//输入框校验开始
+//输入框校验开始
 			var subto = document.getElementById('subto');
 			subto.addEventListener('tap',function() {
 				var tel = /^1[34578]\d{9}$/;
+//				console.log('ssssssssssss')
 			var name = document.getElementById('name').value;
 			var theNumber = document.getElementById('number').value;
 			var cityResult3 = document.getElementById('cityResult3').value;

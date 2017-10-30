@@ -13,14 +13,50 @@ body {
 }
 
 .smart-theme-color {
-	background-color: #f81db8;
+	background-color: #f6442b;
 }
 
 .layout {
 	max-width: 640px;
 	margin: 0 auto;
-	position: relative;
+}
 
+#list {
+			/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+			margin-top: -1px;
+}
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	bottom: 50px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	overflow: hidden;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
 }
 
 .clearfix::after,
@@ -135,17 +171,34 @@ body {
 
 /*搜索框结束*/ 
 .home-search-group {
-	position: fixed;
+	position: absolute;
 	max-width: 640px;
-	top: 20px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: auto;
+	margin: auto;
+	padding: 10px;
+	z-index: 30;
+
+}
+.search-bg {
+	position: absolute;
+	max-width: 640px;
+	top: 0px;
 	left: 0px;
 	right: 0px;
 	bottom: auto;
 	margin: auto;
 	z-index: 2;
-	background-color: transparent;
-	height: 35px;
-	padding: 0 10px;
+	width: 100%;
+	height: 55px;
+	background-color: #f6442b;
+	opacity: 0;
+}
+
+.home-search-group input {
+	margin-bottom: 0;
 }
 
 .home-search-group > div {
@@ -177,7 +230,7 @@ body {
 
 .iconfont.icon-sousuo {
 	position: absolute;
-    top: 8px;
+    top: 16px;
     right: 24px;
     color: #fff;
 }
@@ -191,6 +244,7 @@ body {
 	background-color: #f6442b;
 	margin-top: 0;
 	padding: 0 10px;
+	position: relative;
 	
 }
 
@@ -198,6 +252,13 @@ body {
 	color: #fff;
 	line-height: 40px;
 	font-family: "lcallig";
+	position: absolute;
+	left: 25px;
+	top: 0;
+	height: 40px;
+	padding: 0 10px;
+	background-color: #f6442b;
+	z-index: 2;
 }
 .home-section-box .section-head.section-head-one {
 	margin-top: 5px;
@@ -211,12 +272,13 @@ body {
 	
 }*/
 
-.home-section-box .section-head a {
+.home-section-box .section-head .home-more {
 	float: right;
-	width: 50px;
+	width: 40px;
 	height: 40px;
 	line-height: 40px;
 	color: #fff;
+	font-size: 12px;
 	text-align: center;
 }
 
@@ -242,7 +304,7 @@ body {
 }
 
 .home-ad {
-	margin: 10px 0;
+	margin: 10px 0 7px 0;
 }
 
 .home-ad img {
@@ -264,6 +326,60 @@ body {
 	color: #fff;
 }
 
+.home-line {
+	width: 197px;
+	height: 1px;
+	background-color: #fff;
+	position: absolute;
+	top: 21px;
+	left: 5px;
+}
+
+.home-line-two {
+	width: 228px;
+}
+
+.home-line-three {
+	width: 174px;
+}
+
+.home-pick-list em {
+	font-style: normal;
+	color: #888;
+	font-size: 12px;
+}
+.home-pick-list .mui-table-view-cell {
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.home-pick-list .mui-table-view-cell:last-child {
+	border-bottom: none;
+}
+
+.classification .mui-table-view-cell img {
+	width: 100%;
+	float: left;
+}
+
+.classification .mui-table-view:after,.classification .mui-table-view:before {
+	background-color: transparent;
+}
+.classification .mui-table-view-cell {
+	margin-bottom: 10px;
+}
+
+.classification .mui-table-view-cell>a:not(.mui-btn) {
+	background-color: #fff;
+}
+
+.iconfont.icon-fanhuidingbu {
+    position: absolute;
+	bottom: 100px;
+    right: 24px;
+    font-size: 28px;
+    z-index: 100;
+    display: none;
+}
 
 /*cart页*/ 
 a {
@@ -988,7 +1104,6 @@ a {
 	color: #fff;
 }
 
-<<<<<<< HEAD
 
 /*媒体查询*/
 @media screen and (min-width: 320px) and (max-width: 480px){
