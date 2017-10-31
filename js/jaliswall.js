@@ -84,7 +84,7 @@
                     if (elemsDatas[i].href != undefined) {
                         html += '<a ' + getAttr(href, 'href') + ' ' + getAttr(classe, 'class') + ' ' + getAttr(id, 'id') + '>' + content + '</a>';
                     } else {
-                        html += '<div ' + getAttr(classe, 'class') + ' ' + getAttr(id, 'id') + '>' + content + '</a>';
+                        html += '<li ' + getAttr(classe, 'class') + ' ' + getAttr(id, 'id') + '>' + content + '</li>';
                     }
                     container.children(prm.columnClass).eq(i % nbCols).append(html);
                 }

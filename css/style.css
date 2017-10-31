@@ -698,7 +698,7 @@ a {
   	position: relative;
   	padding: 0;
   	overflow: hidden;
-  	margin-bottom: 50px;
+  	margin-bottom: 20px;
   	padding-left: 10px;
 }
 .wall-column {
@@ -753,14 +753,33 @@ a {
 	box-shadow: 0 0 7px #d7d7d7;
 }
 /*瀑布流结束*/
+.no-products {  
+    position: absolute;  
+    text-align: center;  
+    width: 100%;  
+    font-size: 14px;
+    color: #8f8f94;
+    margin-bottom: 100px;
+}   
 
+/*CSS伪类用法*/  
+.no-products div:after, .no-products div:before {  
+    background: #8f8f94; 
+    content: "";  
+    height: 1px;  
+    position: absolute;  
+    top: 50%;  
+    width: 5%;  
+}  
 
+/*调整背景横线的左右距离*/  
+.no-products div:before {  
+    left: 29%;  
+}  
 
-
-
-
-
-
+.no-products div:after {  
+    right: 29%;  
+}  
 
 
 
