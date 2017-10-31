@@ -852,14 +852,14 @@ a {
 	height: 0;
 	background-color: rgba(0,0,0,0);
 }
-.mui-table-view-cell:after {
+.orders-ul .mui-table-view-cell:after {
 	height: 0;
 	background-color: rgba(0,0,0,0);	
 }
 .mui-content>.mui-table-view:first-child {
 	background-color: rgba(0,0,0,0);
 }
-.mui-table-view {
+.orders-ul .mui-table-view {
 	background-color: rgba(0,0,0,0);
 }
 /*orders结束*/
