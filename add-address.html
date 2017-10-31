@@ -7,7 +7,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" href="css/mui.min.css">
-	<link href="css/mui.picker.css" rel="stylesheet" />
+	<link href="css/mui.picker.all.css" rel="stylesheet" />
 	<link href="css/mui.poppicker.css" rel="stylesheet" />
 
 	<!--<link rel="stylesheet" href="css/style.css">-->
@@ -59,7 +59,7 @@
 
 
 	<script src="js/mui.min.js"></script>
-	<script src="js/mui.picker.all.js"></script>
+	<script src="js/mui.picker.min.js"></script>
 	<script src="js/mui.poppicker.js"></script>
 	<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
 	<script>
@@ -91,7 +91,7 @@
 					var cityResult3 = doc.getElementById('cityResult3');
 					showCityPickerButton.addEventListener('tap', function(event) {
 						cityPicker3.show(function(items) {
-							cityResult3.value = "---" + _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
+							cityResult3.value = _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
 							//返回 false 可以阻止选择框的关闭
 							//return false;
 						});
