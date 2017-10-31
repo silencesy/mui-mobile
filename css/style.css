@@ -356,6 +356,11 @@ body {
 	border-bottom: none;
 }
 
+.classification ul {
+	background-color: transparent;
+	padding-bottom: 10px;
+}
+
 .classification .mui-table-view-cell img {
 	width: 100%;
 	float: left;
@@ -366,6 +371,10 @@ body {
 }
 .classification .mui-table-view-cell {
 	margin-bottom: 10px;
+}
+
+.classification .mui-table-view-cell:last-child {
+	margin-bottom: 0;
 }
 
 .classification .mui-table-view-cell>a:not(.mui-btn) {
