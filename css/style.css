@@ -110,6 +110,7 @@ body {
 }
 
 
+<<<<<<< HEAD
 
 /*底部导航栏*/
 .mui-bar-tab {
@@ -147,6 +148,45 @@ body {
 	background-color: #cf76b8;
 }
 
+=======
+
+/*底部导航栏*/
+.mui-bar-tab {
+	top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 640px;
+}
+    
+ /*首页轮播*/
+.home-carousel {
+    width: 100%;
+    position: relative;
+}
+
+.home-carousel .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.home-carousel .swiper-container .swiper-wrapper .swiper-slide img{
+    width: 100%;
+    height: 100%;
+}
+
+.home-carousel .swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+}
+
+.home-carousel .swiper-pagination-bullet {
+	background-color: #cf76b8;
+}
+
+>>>>>>> a6cec31a174e8b3816b53d01ed944f93e8144e68
 .home-carousel .swiper-pagination-bullet-active {
 	background-color: #fff;
 }
@@ -207,8 +247,182 @@ body {
 	background-color: rgba(255,255,255,0.3);
 	border-radius: 4px;
 }
+<<<<<<< HEAD
+=======
 
 
+
+.home-search-group span {
+	height: 35px;
+	line-height: 35px;
+	background-color: transparent;
+	color: #fff;
+	width: 30%;
+	padding-left: 10px;
+	float: left;
+}
+
+.home-search-group input {
+	background-color: transparent;
+	width: 70%;
+	height: 35px;
+	float: left;
+	color: #fff;
+}
+
+.iconfont.icon-sousuo {
+	position: absolute;
+    top: 16px;
+    right: 24px;
+    color: #fff;
+}
+>>>>>>> a6cec31a174e8b3816b53d01ed944f93e8144e68
+
+.home-section-box {
+	background-color: #fff;
+}
+
+.home-section-box .section-head {
+	height: 40px;
+	background-color: #f6442b;
+	margin-top: 0;
+	padding: 0 10px;
+	position: relative;
+	
+}
+
+.home-section-box .section-head .section-head-text {
+	color: #fff;
+	line-height: 40px;
+	font-family: "lcallig";
+	position: absolute;
+	left: 25px;
+	top: 0;
+	height: 40px;
+	padding: 0 10px;
+	background-color: #f6442b;
+	z-index: 2;
+}
+.home-section-box .section-head.section-head-one {
+	margin-top: 5px;
+}
+
+/*.home-section-box .section-head:nth-child(1) {
+	height: 40px;
+	background-color: #f6442b;
+	margin-top: 5px;
+	padding: 0 10px;
+	
+}*/
+
+.home-section-box .section-head .home-more {
+	float: right;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+
+.home-product-carousel-box {
+	margin: 10px;	
+}
+
+.home-product-carousel-box .product-lists p {
+	text-align: center;
+	color: #333;
+}
+
+.swiper-pagination-progress {
+	background-color: transparent;
+}
+
+.swiper-pagination-progress .swiper-pagination-progressbar {
+	background-color: #b6b6b6;
+}
+
+.swiper-scrollbar-drag {
+	background: rgba(0,0,0,0.2);
+}
+
+.home-ad {
+	margin: 10px 0 7px 0;
+}
+
+.home-ad img {
+	width: 100%;
+	height: auto;
+}
+
+
+.home-search-group input::-webkit-input-placeholder {
+	color: #fff;
+}
+.home-search-group input:-moz-placeholder {
+	color: #fff;
+}
+.home-search-group input::-moz-placeholder {
+	color: #fff;
+}
+.home-search-group input:-ms-input-placeholder {
+	color: #fff;
+}
+
+.home-line {
+	width: 197px;
+	height: 1px;
+	background-color: #fff;
+	position: absolute;
+	top: 21px;
+	left: 5px;
+}
+
+.home-line-two {
+	width: 228px;
+}
+
+.home-line-three {
+	width: 174px;
+}
+
+.home-pick-list em {
+	font-style: normal;
+	color: #888;
+	font-size: 12px;
+}
+.home-pick-list .mui-table-view-cell {
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.home-pick-list .mui-table-view-cell:last-child {
+	border-bottom: none;
+}
+
+.classification .mui-table-view-cell img {
+	width: 100%;
+	float: left;
+}
+
+.classification .mui-table-view:after,.classification .mui-table-view:before {
+	background-color: transparent;
+}
+.classification .mui-table-view-cell {
+	margin-bottom: 10px;
+}
+
+.classification .mui-table-view-cell>a:not(.mui-btn) {
+	background-color: #fff;
+}
+
+.iconfont.icon-fanhuidingbu {
+    position: absolute;
+	bottom: 100px;
+    right: 24px;
+    font-size: 28px;
+    z-index: 100;
+    display: none;
+}
 
 .home-search-group span {
 	height: 35px;
@@ -852,14 +1066,14 @@ a {
 	height: 0;
 	background-color: rgba(0,0,0,0);
 }
-.mui-table-view-cell:after {
+.orders-ul .mui-table-view-cell:after {
 	height: 0;
 	background-color: rgba(0,0,0,0);	
 }
 .mui-content>.mui-table-view:first-child {
 	background-color: rgba(0,0,0,0);
 }
-.mui-table-view {
+.orders-ul .mui-table-view {
 	background-color: rgba(0,0,0,0);
 }
 /*orders结束*/

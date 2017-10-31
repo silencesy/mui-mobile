@@ -415,8 +415,13 @@
 
 	var panelBuffer = '<div class="mui-poppicker">\
 		<div class="mui-poppicker-header">\
+<<<<<<< HEAD
 			<button class="mui-btn mui-poppicker-btn-cancel">取消</button>\
 			<button class="mui-btn mui-btn-blue mui-poppicker-btn-ok">确定</button>\
+=======
+			<button class="mui-btn mui-poppicker-btn-cancel">Cancel</button>\
+			<button class="mui-btn mui-btn-blue mui-poppicker-btn-ok">Confirm</button>\
+>>>>>>> a6cec31a174e8b3816b53d01ed944f93e8144e68
 			<div class="mui-poppicker-clear"></div>\
 		</div>\
 		<div class="mui-poppicker-body">\
