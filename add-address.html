@@ -9,22 +9,18 @@
 	<link rel="stylesheet" href="css/mui.min.css">
 	<link href="css/mui.picker.all.css" rel="stylesheet" />
 	<link href="css/mui.poppicker.css" rel="stylesheet" />
-
-	<!--<link rel="stylesheet" href="css/style.css">-->
+	<link rel="stylesheet" href="css/style.css">
 	<!-- 字体图标 -->
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_py0uecagdjrcz0k9.css">
 </head>
-<style type="text/css">
-	
-</style>
 <body>
-	<div class="layout home-layout">
+	<div class="layout layout-city">
 		<header id="header" class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">Add a new address</h1>
 			<button id="subto" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right add-btn">Done</button>
 		</header>
-		<div class="mui-content">
+		<div class="mui-content addressContent">
 			<div class="mui-input-group" id="inputAdd">
 				<div class="mui-input-row">
 					<label>Full&nbsp;name：</label>
@@ -38,25 +34,19 @@
 				
 				<!-- 三级联动开始 -->
 	    		<div id="showCityPicker3" class="mui-input-row">
-	    			<label style="display: inline-block;float: left;">Select&nbsp;region：</label>
-	    			<input type="" name="" id="cityResult3" value=""  style="padding: 10px;"/>
+	    			<label class="region">Select&nbsp;region：</label>
+	    			<input type="" name="" id="cityResult3" value="" />
 	    			
 	    		</div>
 	    		<!-- 三级联动结束 -->
 	    		<textarea id="textarea" rows="5" placeholder="Please fill in the details"></textarea>
 			</div> 
-			<div class="mui-input-row" >
-					
-					
-				</div>
-			
-			<div class="mui-input-row mui-checkbox mui-left setDefault" style="background: #fff;margin-top: 15px;">
+			<div class="mui-input-row mui-checkbox mui-left setDefault">
 			  	<label>Set as Default</label>
 			  	<input name="checkbox1" value="Item 1" type="checkbox">
 			</div>
 		</div>
 	</div>
-
 
 	<script src="js/mui.min.js"></script>
 	<script src="js/mui.picker.min.js"></script>
@@ -118,6 +108,7 @@
 					return false
 				}else if(cityResult3 == '') {
 					mui.toast('Please select parts');
+					return false
 				}else if(theTextarea == '') {
 					
 					mui.toast('Please fill in the details');
