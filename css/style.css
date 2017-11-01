@@ -129,13 +129,13 @@ body {
 
 .home-carousel .swiper-container {
     width: 100%;
-    height: 100%;
+    // height: 100%;
     position: relative;
 }
 
 .home-carousel .swiper-container .swiper-wrapper .swiper-slide img{
     width: 100%;
-    height: 100%;
+    // height: 100%;
 }
 
 .home-carousel .swiper-pagination-bullet {
@@ -932,7 +932,7 @@ a {
 /*order-confirm结束*/
 
 
-/*搜索结果页*/
+/*搜索结果页开始*/
 .result-ul .list-li-img {
 	float: left;
 	width: 40%;
@@ -1091,15 +1091,142 @@ a {
 .no-products div:after {  
     right: 29%;  
 }
+/*搜索结果页结束*/
+
+/*商户首页开始*/
+.layout-shop-owner {
+	background-color: #fff;
+}
+.icon-kefu {
+	color: #f24827;
+}
+.mui-bar-shop .shop-nav {
+	width: 24.5%;
+    display: inline-block;
+    line-height: 50px;
+    overflow: visible;
+    font-size: 14px;
+}
+.shop-line {
+	width: 1px;
+    height: 15px;
+    border-right: 1px solid #bbb;
+    display: inline-block;
+    float: left;
+    line-height: 50px;
+    margin-top: 18px;
+}
+.mui-bar-top {
+	padding: 0;
+    background-color: #fff;
+    width: 100%;
+    overflow: hidden;
+}
+.mui-bar-top .shop-nav {
+	line-height: 50px;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    float: left;
+    width: 24.7%;
+}
+.shop-header {
+	height: 70px;
+	background-color: #1176c5;
+	padding: 10px;
+}
+.shop-header >div {
+	height: 50px;
+    line-height: 50px;
+}
+.shop-header .shop-header-left {
+	float: left;
+}
+.shop-header .shop-header-right {
+	position: relative;
+}
+.shop-header .shop-header-left span {
+	display: inline-block;
+	vertical-align: top;
+	color: #fff;
+	padding-left: 5px;
+}
+.icon-shoucang {
+	color: #fff;
+}
+.shop-header-right .icon-shoucang {
+	display: inline-block;
+	position: absolute;
+	right: 13%;
+	font-size: 17px;
+}
+.shop-header-right .icon-sousuo {
+	display: inline-block;
+	position: absolute;
+	top: 2%;
+    right: 3%;   
+}
+.shop-header .shop-header-left img {
+ 	width: 50px;
+    height: 50px;
+    border-radius: 10px;
+ }
+
+.shop-section-head {
+    height: 40px;
+    background-color: #1176c5;
+    margin-top: 0;
+    padding: 0 10px;
+    position: relative;
+}
+.section-head-title {
+    color: #fff;
+    line-height: 40px;
+    font-family: "lcallig";
+    height: 40px;
+    background-color: #1176c5;
+    z-index: 2;
+    text-align: center;
+}
+.shop-home-line {
+    width: 230px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    top: 21px;
+    left: 72px;
+}
+.shop-products >img {
+	width: 100%;
+	// height: 750px;
+}
+.shop-products {
+	padding-bottom: 70px;
+	background-color: #fff;
+}
+.shop-carousel .swiper-container .swiper-wrapper .swiper-slide img {
+    display: block;
+} 
+.shop-section-head div:after, .shop-section-head div:before {  
+    background: #fff; 
+    content: "";  
+    height: 1px;  
+    position: absolute;  
+    top: 52%;  
+    width: 5%;  
+}  
+.shop-section-head div:before {  
+    left: 24%;  
+}  
+.shop-section-head div:after {  
+    right: 23%;  
+}
 
 
 
 
 
-
-
-
-
+/*商户首页结束*/
 
 /*no-address*/ 
 .no-address {
