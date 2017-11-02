@@ -7,6 +7,10 @@
     src: url('../fonts/lcallig.ttf') format('truetype');
 }
 
+em {
+	font-style: normal;
+}
+
 body {
     background-color: #E8E8E8;
     // position: fixed;
@@ -1585,23 +1589,38 @@ input:-ms-input-placeholder {
 
 
 
+.done-btn {
+	display: none;
+}
 
+.settlement-box .do-delete {
+	display: none;
+}
 /*加减组件开始*/
+.sub-add {
+	display: none;
+}
+
 .sub-add i {
 	font-size: 20px;
 	float: left;
 	color: #999;
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
 	text-align: center;
-	line-height: 25px;
+	line-height: 30px;
 	background-color: #E8E8E8;
+	color: #A9A9A9;
 } 
+
+.sub-add i:first-child {
+	color: #D5D5D5;
+}
 
 .sub-add input {
 	float: left;
 	width: 60px;
-	height: 23px;
+	height: 30px;
 	text-align: center;
 	border: none;
     outline: none;
@@ -1609,12 +1628,153 @@ input:-ms-input-placeholder {
     -webkit-appearance: none;
     background-color: #E8E8E8;
     border-radius: 0;
-    height: 25px;
     margin: 0 1px;
     color: #999;
 }
 /*加减组件结束*/ 
 
+
+/*详情页*/
+.iconfont.icon-gouwuche {
+	display: inline-block;
+	position: fixed;
+	right: 20px;
+	top: 60px;
+	background-color: #999;
+	color: #fff;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 30px;
+	z-index: 20;
+}
+
+.detail-infos {
+	background-color: #E8E8E8;
+}
+
+
+.detail-infos .mui-table-view {
+	background-color: #E8E8E8;
+	padding-top: 10px;
+	color: #444;
+}
+
+.detail-infos .mui-table-view:before {
+	background-color: transparent;
+}
+.detail-infos .mui-table-view-cell {
+	background-color: #fff;
+}
+
+.detail-infos .mui-table-view-cell:after {
+	background-color: transparent;
+}
+
+.detail-infos .mui-table-view-cell:first-child {
+	margin-bottom: 10px;
+}
+
+.comment-box {
+	padding: 10px;
+	background-color: #fff;
+}
+
+.comment-box .comment-box-list p > img {
+	width: 41px;
+	height: 41px;
+	float: left;
+}
+
+.comment-box .comment-box-list p > span {
+	display: inline-block;
+	height: 41px;
+	line-height: 41px;
+	float: left;
+	margin-left: 10px;
+}
+
+.comment-box .comment-box-list p:nth-child(2) {
+	padding-left: 20px;
+	word-break: break-all;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.detail-text-info {
+	padding: 5px 10px 10px 10px;
+	background-color: #fff;
+}
+
+.detail-text-info > p {
+	margin: 5px 0;
+}
+
+.detail-text-info > .title {
+	color: #444;
+	font-size: 16px;
+}
+
+.detail-text-info .price{
+	font-size: 18px;
+	color: #f6442b;
+}
+
+.more-comment-box {
+	text-align: center;
+	padding: 5px 0;
+}
+
+.Details-info-title {
+	height: 43px;
+	line-height: 43px;
+	padding-left: 10px;
+	border-bottom: 1px solid #dfdfdf;
+	color: #444444;
+	background-color: #fff;
+	margin-top: 10px;
+}
+
+.more-comment {
+	display: inline-block;
+	width: 140px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #fff;
+	color: #f6442b;
+	text-align: center;
+	border: 1px solid #f6442b;
+	border-radius: 20px;
+}
+
+.more-comment:active {
+	color: #f6442b;
+}
+
+.choose-info {
+	max-width: 640px;
+	height: 400px;
+	background-color: red;
+	position: fixed;
+	bottom: -400px;
+	left: 0;
+	right: 0;
+	top: auto;
+	margin: auto;
+	z-index: 30;
+	transition: all 0.2s;
+}
+
+.iconfont.icon-guanbi {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 30px;
+}
 
 /*媒体查询*/
 @media screen and (max-width: 320px){

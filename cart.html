@@ -24,7 +24,8 @@
 		<header id="header" class="mui-bar mui-bar-nav ">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">Cart</h1>
-			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right edit-btn">Edit</button>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right edit-btn" id="editBtn">Edit</button>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right done-btn" id="doneBtn">Done</button>
 		</header>
 		<nav class="mui-bar mui-bar-tab">
 			<a class="mui-tab-item" href="./home-page.html">
@@ -61,11 +62,16 @@
 										<span class="product-list-price fl">￥23.00</span>
 										<span class="product-list-number fr">x1</span>
 									</div>
+									<div class="sub-add">
+										<i class="iconfont icon-icon sub"></i>
+										<input type="text" value="1">
+										<i class="iconfont icon-jia add"></i>
+									</div>
 								</div>	
 								<label>							
 									<img src="images/prodeuctdemo.png" alt="">
 								</label>
-								<input name="checkbox" class="listCheckBox" value="Item 1" type="checkbox" >
+								<input name="checkbox" class="listCheckBox" value="23" number='2' type="checkbox" >
 							</div>
 						</div>
 					</li>
@@ -82,11 +88,16 @@
 										<span class="product-list-price fl">￥23.00</span>
 										<span class="product-list-number fr">x1</span>
 									</div>
+									<div class="sub-add">
+										<i class="iconfont icon-icon sub"></i>
+										<input type="text" value="1">
+										<i class="iconfont icon-jia add"></i>
+									</div>
 								</div>	
 								<label>							
 									<img src="images/prodeuctdemo.png" alt="">
 								</label>
-								<input name="checkbox" class="listCheckBox" value="Item 1" type="checkbox" >
+								<input name="checkbox" class="listCheckBox" value="23" number='1' type="checkbox" >
 							</div>
 						</div>
 					</li>
@@ -103,11 +114,16 @@
 										<span class="product-list-price fl">￥23.00</span>
 										<span class="product-list-number fr">x1</span>
 									</div>
+									<div class="sub-add">
+										<i class="iconfont icon-icon sub"></i>
+										<input type="text" value="1">
+										<i class="iconfont icon-jia add"></i>
+									</div>
 								</div>	
 								<label>							
 									<img src="images/prodeuctdemo.png" alt="">
 								</label>
-								<input name="checkbox" class="listCheckBox" value="Item 1" type="checkbox" >
+								<input name="checkbox" class="listCheckBox" value="23" number='1' type="checkbox" >
 							</div>
 						</div>
 					</li>
@@ -121,10 +137,10 @@
 									<a href="login.html">
 										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
 									</a>
-									<!-- <div class="product-buy-info clearfix">
+									 <div class="product-buy-info clearfix">
 										<span class="product-list-price fl">￥23.00</span>
 										<span class="product-list-number fr">x1</span>
-									</div> -->
+									</div> 
 									<div class="sub-add">
 										<i class="iconfont icon-icon sub"></i>
 										<input type="text" value="1">
@@ -134,7 +150,7 @@
 								<label>							
 									<img src="images/prodeuctdemo.png" alt="">
 								</label>
-								<input name="checkbox" class="listCheckBox" value="Item 1" type="checkbox" >
+								<input name="checkbox" class="listCheckBox" value="23" number='1' type="checkbox" >
 							</div>
 						</div>
 					</li>
@@ -147,12 +163,13 @@
 				<nav class="settlement-box" id="checkAll">
 					<div class="mui-input-row mui-checkbox mui-left">
 						<label >All</label>
-						<input name="checkbox" id="checkAllInput" value="Item 1" type="checkbox" >
+						<input name="checkbox" id="checkAllInput" type="checkbox" >
 					</div>
 					<div class="total">
-						Total:<span>￥0</span>
+						Total:<span>￥<em id="sumPrice">0</em></span>
 					</div>
-					<span class="buy-btn">To pay</span>
+					<span class="buy-btn" id="toPay">To pay</span>
+					<span class="buy-btn do-delete" id="doDelete">Delete</span>
 				</nav>
 			</div>
 		</div>
@@ -172,6 +189,7 @@
 
 			
 			//拖拽后显示操作图标，点击操作图标删除元素；
+			var btnArray = ['Confirm', 'Cancel'];
 			$('#cartList').on('tap', '.mui-btn', function(event) {
 				var elem = this;
 				var li = elem.parentNode.parentNode;
@@ -183,6 +201,8 @@
 							
 							li.parentNode.removeChild(li);
 							cartIsEmpty ();
+							checkedValues();
+							AllLight();
 						} else {
 							$.swipeoutClose(li);
 							mui.toast('欢迎体验Hello MUI');
@@ -195,7 +215,52 @@
 					}
 				});
 			});
-			var btnArray = ['Confirm', 'Cancel'];
+			
+			$('#header').on('tap', '.edit-btn', function(event) {
+				var doneBtn = document.getElementById('doneBtn');
+				var doDelete = document.getElementById('doDelete');
+				var doDelete = document.getElementById('doDelete');
+				doneBtn.style.display = 'block';
+				toPay.style.display = 'none';
+				doDelete.style.display = 'block';
+				this.style.display = "none";
+				$('.product-buy-info').each(function(){
+					this.style.display = "none";
+				});
+				$('.sub-add').each(function(){
+					this.style.display = "block";
+				});
+			});
+			
+			$('#header').on('tap', '#doneBtn', function(event) {
+				var editBtn = document.getElementById('editBtn');
+//				var doneBtn = document.getElementById('doneBtn');
+				var doDelete = document.getElementById('doDelete');
+				var doDelete = document.getElementById('doDelete');
+
+				editBtn.style.display = 'block';
+				toPay.style.display = 'block';
+				doDelete.style.display = 'none';
+
+				$('.product-buy-info').each(function(){
+					this.style.display = "block";
+				});
+				$('.sub-add').each(function(){
+					this.style.display = "none";
+				});
+			});
+			
+			var doDelete = document.getElementById('doDelete');
+			mui('#checkAll').on('tap','#doDelete',function(){
+				var checkbox=document.getElementsByClassName('listCheckBox');
+				for(var i=0;i<checkbox.length;i++){ 
+					if(checkbox[i].checked==true){ 
+//						checkbox[i];
+						console.log(1);
+					} 
+				}
+			});
+			
 			mui('.settlement-box').on('change', 'input', function() {
 				var value = this.checked;
 				mui('.listCheckBox').each(function() {
@@ -205,10 +270,18 @@
 						this.checked = false;
 					}
 				});
+				checkedValues();
 
 			});
 
 			mui('.mui-table-view-cell').on('change', 'input', function() {
+				AllLight();
+				checkedValues();
+
+			});
+			
+//			所有选项选中all亮 
+			function AllLight() {
 				var checkAllInput = document.getElementById('checkAllInput');
 				var flag = 0;
 				mui('.listCheckBox').each(function(index, el) {
@@ -223,34 +296,31 @@
 					checkAllInput.checked = false;
 					
 				}
-
-			});
-
-			// $(".sub").click(function(){
-			// 	var n=$(this).next().val();
-			// 	var num=parseInt(n)-1;
-		 //        if (num==1) {
-		 //           $(this).css("color","#D5D5D5"); 
-		 //        }
-			// 	if(num==0){
-		 //            return;
-		 //        }
-			// 	$(this).next().val(num);
-			// });
-			// // 点击增加商品数量
-			// $(".add").click(function(){
-	  //           $(this).prev().prev().css("color","#A9A9A9");
-			// 	var n=$(this).prev().val();
-			// 	var num=parseInt(n)+1;
-			// 	$(this).prev().val(num);
-			// });
-
+			}
+			
+			
+			//			购物车加减
 			mui('.sub-add').on('tap','.sub',function(){
-	            
+	            var n = this.nextElementSibling.value;
+	            console.log(n);
+				var num = parseInt(n)-1;
+		        if (num == 1) {
+		           this.style.color = "#D5D5D5";
+		        }
+				if(num==0){
+		            return;
+		        }
+				this.nextElementSibling.value = num;
+				checkedValues();
+
 	        });
 
 	        mui('.sub-add').on('tap','.add',function(){
-	            
+	            this.previousElementSibling.previousElementSibling.style.color = "#A9A9A9";
+			 	var n = this.previousElementSibling.value;
+			 	var num=parseInt(n)+1;
+			 	this.previousElementSibling.value = num;
+			 	checkedValues();
 	        });
 			
 
@@ -260,14 +330,33 @@
 	        mui('.product-list-info').on('tap','a',function(){
 	            window.location.href = this.getAttribute('href');
 	        });
-
+			
+			//			购物车空跳转空购物车
 	        function cartIsEmpty () {
-	        	console.log(mui('.mui-table-view-cell').length);
 		        if (mui('.mui-table-view-cell').length===0) {
 		            location.href="cart-empty.html";//跳到空的购物车页面
 		        }
 		    }
 
+			
+			//			算总价格
+		    function checkedValues(){ 
+				var arr=new Array(); 
+				var arr2=new Array(); 
+				var sumPriceNumber = 0;
+				var checkbox=document.getElementsByClassName('listCheckBox');
+				var sumPrice = document.getElementById('sumPrice');
+				for(var i=0;i<checkbox.length;i++){ 
+					if(checkbox[i].checked==true){ 
+						arr.push(checkbox[i].value); 
+						arr2.push(checkbox[i].getAttribute('number')); 
+					} 
+				}
+				for(var i=0;i<arr.length;i++){
+					sumPriceNumber +=arr[i]*arr2[i];
+				}
+				sumPrice.innerText = sumPriceNumber;
+			} 
 	        
 		})(mui);
 
