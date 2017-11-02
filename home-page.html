@@ -125,43 +125,55 @@
 						<div class="home-line home-line-two"></div>
 						<a href="#" class="home-more">More</a>
 					</div>
-					<div class="home-product-carousel-box">
+					<div class="home-product-carousel-box home-product-carousel-box2">
 						<div class="swiper-container home-product-carousel">
 					        <div class="swiper-wrapper">
 					            <div class="swiper-slide product-lists">
 					            		<a href="#">
 					            			<img src="images/products.jpg" alt="" />
-										<p>adidas</p>
+											<p>adidasadidasaddidasadidasaddidasadidasaddidasadidasaddidasadidasadidasadidasadidasadidasadidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
 					            		</a>
 					            </div>
 					            <div class="swiper-slide product-lists">
 					            		<a href="#">
 					            			<img src="images/products.jpg" alt="" />
-										<p>adidas</p>
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
 					            		</a>
 					            </div>
 					            <div class="swiper-slide product-lists">
 					            		<a href="#">
 					            			<img src="images/products.jpg" alt="" />
-										<p>adidas</p>
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
 					            		</a>
 					            </div>
 					            <div class="swiper-slide product-lists">
 					            		<a href="#">
 					            			<img src="images/products.jpg" alt="" />
-										<p>adidas</p>
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
 					            		</a>
 					            </div>
 					            <div class="swiper-slide product-lists">
 					            		<a href="#">
 					            			<img src="images/products.jpg" alt="" />
-										<p>adidas</p>
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
 					            		</a>
 					            </div>
 					            <div class="swiper-slide product-lists">
 					            		<a href="#">
 					            			<img src="images/products.jpg" alt="" />
-										<p>adidas</p>
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
 					            		</a>
 					            </div>
 					            
@@ -263,22 +275,22 @@
 		});
 		
 		//		底部页面跳转
-		mui('body').on('tap','a',function(){
-            window.location.href = this.getAttribute('href');
-       });
+		// mui('body').on('tap','a',function(){
+  //           window.location.href = this.getAttribute('href');
+  //      	});
        
 		//     返回顶部按钮
        
        
-       var myScroll;
-       var position;
+		var myScroll;
+		var position;
 		function loaded () {
 			myScroll = new IScroll('#wrapper', { probeType: 3, mouseWheel: true });
 			myScroll.on('scroll', updatePosition);
 			myScroll.on('scrollEnd', updatePosition);
 			document.getElementById('backBtn').addEventListener('tap',function(){
-       		myScroll.scrollTo(0, 0, 1000);
-       });
+	       		myScroll.scrollTo(0, 0, 1000);
+	       });
 		}
 		function updatePosition () {;
 			var backBtn = document.getElementById('backBtn'); 
@@ -300,21 +312,21 @@
 			}
 		}
 		
-		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
-			capture: false,
-			passive: false
-		} : false);
-		function isPassive() {
-		    var supportsPassiveOption = false;
-		    try {
-		        addEventListener("test", null, Object.defineProperty({}, 'passive', {
-		            get: function () {
-		                supportsPassiveOption = true;
-		            }
-		        }));
-		    } catch(e) {}
-		    return supportsPassiveOption;
-		}
+		// document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+		// 	capture: false,
+		// 	passive: false
+		// } : false);
+		// function isPassive() {
+		//     var supportsPassiveOption = false;
+		//     try {
+		//         addEventListener("test", null, Object.defineProperty({}, 'passive', {
+		//             get: function () {
+		//                 supportsPassiveOption = true;
+		//             }
+		//         }));
+		//     } catch(e) {}
+		//     return supportsPassiveOption;
+		// }
 		
 		//		首页第一个轮播
         var homeBannerCarousel = new Swiper('.home-banner-carousel',{
