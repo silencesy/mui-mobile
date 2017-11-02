@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>search-result</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_jmbdwkgo4etdquxr.css">
+	<style type="text/css">
+		#list {
+			/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+			margin-top: -1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout search-result-layout">
+		<header id="header" class="mui-bar mui-bar-nav comment-mui-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span class="comment-title1 comment-title-active">All</span>
+			<span class="comment-title2">With Image</span>
+			<span class="iconfont icon-gouwuche comment-icon-gouwuche"></span>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="./home-page.html">
+				<span class="mui-icon iconfont icon-shanghu1"></span>
+				<span class="mui-tab-label">Homepage</span>
+			</a>
+			<a class="mui-tab-item" href="">
+				<span class="mui-icon iconfont icon-kefu"></span>
+				<span class="mui-tab-label">Talk</span>
+			</a>
+			<a class="mui-tab-item" href="">
+				<span class="mui-icon iconfont icon-shoucang1"></span>
+				<span class="mui-tab-label">Save</span>
+			</a>
+			<a class="mui-tab-item" href="">
+
+				<span class="mui-tab-label">Add To Cart</span>
+			</a>
+		</nav>
+		<div class="mui-content  mui-content-result">
+
+		</div>		
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$(".comment-title2").click(function() {
+	            $(".comment-title1").removeClass("comment-title-active");
+	            $(".comment-title2").addClass("comment-title-active");
+			});
+			$(".comment-title1").click(function() {
+	            $(".comment-title2").removeClass("comment-title-active");
+	            $(".comment-title1").addClass("comment-title-active");
+			});
+	   	})		
+	</script>
+</body>
+</html>
