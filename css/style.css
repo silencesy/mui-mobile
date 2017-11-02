@@ -79,12 +79,11 @@ body {
 .mui-title {
 	color: #333;
 }
+.mui-toast-container {
+    bottom: 20% !important;/*离布局底部的距离*/
+}
 
 /*home页*/ 
-
-
-
-
 .home-layout .mui-content {
 	background-color: #E8E8E8;
 }
@@ -150,9 +149,6 @@ body {
 .home-carousel .swiper-pagination-bullet-active {
 	background-color: #fff;
 }
-
-
-
 .home-search-group input,.home-search-group textarea {
     border: none;
     outline: none;
@@ -1027,6 +1023,7 @@ a {
   	overflow: hidden;
   	margin-bottom: 20px;
   	padding-left: 10px;
+  	margin-top: 10px;
 }
 .wall-column {
   	display: block;
@@ -1111,13 +1108,13 @@ a {
 .layout-shop-owner {
 	background-color: #fff;
 }
-.icon-kefu {
+.layout-shop-owner .icon-kefu {
 	color: #f24827;
 }
 .mui-bar-shop .shop-nav {
 	width: 24.5%;
     display: inline-block;
-    line-height: 50px;
+    line-height: 45px;
     overflow: visible;
     font-size: 14px;
 }
@@ -1129,6 +1126,14 @@ a {
     float: left;
     line-height: 50px;
     margin-top: 18px;
+}
+.bottom-line {
+    width: 1px;
+    height: 15px;
+    border-right: 1px solid #bbb;
+    display: inline-block;
+    line-height: 50px;
+
 }
 .mui-bar-top {
 	padding: 0;
@@ -1210,7 +1215,7 @@ a {
     top: 21px;
     left: 72px;
 }
-.shop-products >img {
+.shop-products img {
 	width: 100%;
 	// height: 750px;
 }
@@ -1235,12 +1240,104 @@ a {
 .shop-section-head div:after {  
     right: 23%;  
 }
-
-
-
-
-
 /*商户首页结束*/
+
+/*商户搜索开始*/
+.shop-search-content {
+	background-color: #fff !important;
+}
+.shop-search-input {
+	padding-top: 5px;
+}
+.shop-search-input .search-input {
+	width: 90%;
+	margin-bottom: 0;
+	height: 35px;
+	border-radius: 10px;
+	border: none;
+	background-color: #eeeeee;
+}
+.shop-search-input .icon-sousuo {
+    position: absolute;
+    top: 13px;
+    right: 31px;
+    color: #f6442b;
+}
+.layout-shop-search #header .shop-search-left {
+	display: inline-block;
+    width: 14%;	
+    padding-left: 5px;
+}
+.search-history {
+	position: relative;
+}
+.search-history .del {
+	position: absolute;
+	right: 30px;
+	top: 0;
+}
+.shop-search-content div li {
+	list-style: none;
+    font-size: 14px;
+    color: #757272;
+    float: left;
+    padding: 5px 10px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+.shop-search-content div div {
+    overflow: hidden;
+    text-align: center;
+}
+.search-popular p, .search-history p {
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+.search-popular, .search-history {
+	padding-left: 20px;
+}
+.search-popular {
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+.z_history {
+	padding: 20px 20px 10px;
+}
+
+/*商户搜索结束*/
+
+/*商品评价开始*/
+.comment-mui-bar {
+	position: relative;
+}
+.comment-title1, .comment-title2 {
+	display: inline-block;
+    padding: 2px 15px;
+    background-color: #f2f2f2;
+    line-height: 25px;
+    margin: 8px 15px 0;
+    border-radius: 13px;
+    color: #919191;
+    font-size: 14px;
+}
+.comment-icon-gouwuche {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+}
+.comment-title-active {
+	background-color: #f6442b;
+	color: #fff;
+}
+
+
+
+
+
+
+/*商品评价结束*/
 
 /*no-address*/ 
 .no-address {
