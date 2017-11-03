@@ -1916,22 +1916,130 @@ input:-ms-input-placeholder {
 }
 .choose-info {
 	max-width: 640px;
-	height: 400px;
-	background-color: red;
+	max-height: 420px;
 	position: fixed;
-	bottom: -400px;
+	bottom: -420px;
 	left: 0;
 	right: 0;
 	top: auto;
 	margin: auto;
 	z-index: 30;
 	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	background-color: #fff;
+	z-index: 50;
+	padding: 10px;
+}
+
+.detail-mask {
+	max-width: 640px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 40;
+	display: none;
+	background-color: rgba(0,0,0,0.34);
 }
 .iconfont.icon-guanbi {
 	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 30px;
+	top: 10px;
+	right: 10px;
+	font-size: 25px;
+	color: #818181;
+}
+
+.choose-info-imgtext {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ececec;
+}
+
+.choose-info-imgtext .choose-info-img {
+	float: left;
+	width: 35%;
+}
+
+.choose-info-imgtext .choose-info-text {
+	float: left;
+	width: 65%;
+	padding-left: 10px;
+}
+
+.choose-info-imgtext .choose-info-text p:first-child {
+	color: #f9421d;
+}
+
+.choose-classification {
+	padding: 10px;
+	border-bottom: 1px solid #ececec;
+}
+
+.choose-classification p:first-child {
+	color: #333;
+	height: 40px;
+    line-height: 40px;
+    margin-bottom: 0;
+}
+
+.choose-classification p:nth-child(2) {
+	overflow-y:scroll;
+	max-height: 145px;
+	padding: 5px 0;
+}
+
+.choose-classification p:nth-child(2) span {
+	float: left;
+	padding: 3px 5px;
+	color: #fff;
+	background-color: #eee;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	color: #000;
+}
+
+.choose-classification p:nth-child(2) span.active {
+	color: #fff;
+	background-color: #f9421d;
+}
+
+
+.car-buy {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.car-buy span {
+	float: left;
+	width: 50%;
+	text-align: center;
+	color: #fff;
+	height: 40px;
+	line-height: 40px;
+}
+.car-buy span:nth-child(1) {
+	background-color: #f6b12b;
+}
+
+.car-buy span:nth-child(2) {
+	background-color: #f6442b;
+}
+.sub-add.show {
+	display: block;
+}
+
+.choose-numbers {
+	padding: 10px 0;
+	border-bottom: 1px solid #ececec;
+}
+
+.choose-numbers > span {
+	height: 30px;
+	line-height: 30px;
 }
 
 /*媒体查询*/
