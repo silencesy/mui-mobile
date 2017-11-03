@@ -8,7 +8,7 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="css/swiper.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_yqwj8mnylwwdygb9.css" />
+		<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_jmbdwkgo4etdquxr.css" />
 		<style>
 		
 			.detail-layout .mui-content {
@@ -173,8 +173,38 @@
 		<div class="layout detail-layout">
 			
 			<span class="iconfont icon-gouwuche"></span>
+			<div id='detailMask' class="detail-mask"></div>
 			<div class="choose-info" id="chooseInfo">
-				<span class="iconfont icon-guanbi"></span>
+				<span class="iconfont icon-guanbi" id="closeChoose"></span>
+				<div class="choose-info-imgtext clearfix">
+					<img class="choose-info-img" src="images/lb.jpg" alt="" />
+					<div class="choose-info-text">
+						<p>￥<em>300</em></p>
+						<p>Stock 50(items) </p>
+					</div>
+				</div>
+				<div class="choose-classification">
+					<p>Type</p>
+					<p>
+						<span class="active">Child Ticket</span>
+						<span>Adult Ticket</span>
+						<span>Child Ticket</span>
+						<span>Adult Ticket</span>
+						
+					</p>
+				</div>
+				<div class="choose-numbers clearfix">
+					<span class="fl">Quantity</span>
+					<div class="sub-add show fr">
+						<i class="iconfont icon-icon sub"></i>
+						<input type="text" value="1">
+						<i class="iconfont icon-jia add"></i>
+					</div>
+				</div>
+				<div class="car-buy">
+					<span>Add To Cart</span>
+					<span>To Pay</span>
+				</div>
 			</div>
 			<div class="mui-content">
 				<div class="detail-carousel">
@@ -250,11 +280,44 @@
 					paginationClickable :true				
 				});
 				mui.previewImage();
-				chooseColor = document.getElementById('chooseColor');
+				var detailMask = document.getElementById('detailMask');
+				var chooseColor = document.getElementById('chooseColor');
+				var chooseInfo = document.getElementById('chooseInfo');
 				chooseColor.addEventListener('tap',function() {
-					var chooseInfo = document.getElementById('chooseInfo');
+					detailMask.style.display = "block";
 					chooseInfo.style.bottom = 0;
 				});
+
+				closeChoose.addEventListener('tap',function(){
+					detailMask.style.display = "none";
+					chooseInfo.style.bottom = '-400px';
+				})
+				
+				detailMask.addEventListener('tap',function() {
+					detailMask.style.display = "none";
+					chooseInfo.style.bottom = '-400px';
+				});
+				mui('.sub-add').on('tap','.sub',function(){
+	            var n = this.nextElementSibling.value;
+	            console.log(n);
+				var num = parseInt(n)-1;
+		        if (num == 1) {
+		           this.style.color = "#D5D5D5";
+		        }
+				if(num==0){
+		            return;
+		        }
+				this.nextElementSibling.value = num;
+
+	        });
+
+	        mui('.sub-add').on('tap','.add',function(){
+	            this.previousElementSibling.previousElementSibling.style.color = "#A9A9A9";
+			 	var n = this.previousElementSibling.value;
+			 	var num=parseInt(n)+1;
+			 	this.previousElementSibling.value = num;
+	        });
+				
 	        
 			})(mui);
 		</script>
