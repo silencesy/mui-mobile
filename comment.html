@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>search-result</title>
+	<title>comment</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -25,14 +25,6 @@
 			<span class="comment-title2">With Image</span>
 			<span class="iconfont icon-gouwuche comment-icon-gouwuche"></span>
 		</header>
-		<div class="mui-content">
-
-
-
-
-
-
-		</div>	
 		<!-- 评论底部开始 -->
 		<nav class="mui-bar mui-comment-bottom">
 			<a class="comment-bottom-item" href="">
@@ -55,17 +47,72 @@
 			</a>
 		</nav>	
 		<!-- 评论底部结束 -->
+		<div class="mui-content comment-content">
+			<div class="comment-box comment-box-all">
+				<div class="comment-box-list">
+					<p class="clearfix comment-name">
+						<img src="images/yl.png" alt="" />
+						<span>miller</span>
+					</p>
+					<div class="comment-message">
+						<span>2017-10-24</span>
+						<span>Color Category：Black</span>
+					</div>
+					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
+				</div>
+			</div>
+			<div class="comment-box comment-box-all">
+				<div class="comment-box-list">
+					<p class="clearfix comment-name">
+						<img src="images/yl.png" alt="" />
+						<span>miller</span>
+					</p>
+					<div class="comment-message">
+						<span>2017-10-24</span>
+						<span>Color Category：Black</span>
+					</div>
+					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
+				</div>
+			</div>
+			<div class="comment-box comment-box-all withImg">
+				<div class="comment-box-list">
+					<p class="clearfix comment-name">
+						<img src="images/yl.png" alt="" />
+						<span>miller</span>
+					</p>
+					<div class="comment-message">
+						<span>2017-10-24</span>
+						<span>Color Category：Black</span>
+					</div>
+					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
+					<div class="comment-img">
+						<img src="images/commit-img.jpg" alt="">
+						<img src="images/commit-img.jpg" alt="">
+						<img src="images/commit-img.jpg" alt="">
+<!-- 						<img src="images/commit-img.jpg" alt="">
+						<img src="images/commit-img.jpg" alt="">
+						<img src="images/commit-img.jpg" alt=""> -->
+					</div>
+				</div>
+			</div>
+		</div>	
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script>
 		$(function(){
 			$(".comment-title2").click(function() {
 	            $(".comment-title1").removeClass("comment-title-active");
-	            $(".comment-title2").addClass("comment-title-active");
+	            $(this).addClass("comment-title-active");
+				$.each($('.comment-box'),function(index,item){
+				    if($(this).hasClass('withImg') == false) {
+				        $(this).css("display","none");
+					}
+				});
 			});
 			$(".comment-title1").click(function() {
 	            $(".comment-title2").removeClass("comment-title-active");
-	            $(".comment-title1").addClass("comment-title-active");
+	            $(this).addClass("comment-title-active");
+	            $(".comment-box").css("display","block");
 			});
 	   	})		
 	</script>
