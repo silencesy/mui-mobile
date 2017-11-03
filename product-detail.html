@@ -4,7 +4,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="css/swiper.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
@@ -161,7 +163,7 @@
 					opacity: 0;
 				}
 			}
-			p img {
+			.product-detail-imgs p img {
 				max-width: 100%;
 				height: auto;
 			}
@@ -172,7 +174,7 @@
 	
 		<div class="layout detail-layout">
 			
-			<span class="iconfont icon-gouwuche"></span>
+			<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">5</span></span>
 			<div id='detailMask' class="detail-mask"></div>
 			<div class="choose-info" id="chooseInfo">
 				<span class="iconfont icon-guanbi" id="closeChoose"></span>
@@ -206,18 +208,42 @@
 					<span>To Pay</span>
 				</div>
 			</div>
+			<!-- 评论底部开始 -->
+			<nav class="mui-bar mui-comment-bottom">
+				<a class="comment-bottom-item" href="">
+					<span class="mui-icon iconfont icon-shanghu1"></span>
+					<span class="mui-tab-label">Homepage</span>
+				</a>
+				<a class="comment-bottom-item" href="">
+					<span class="mui-icon iconfont icon-kefu"></span>
+					<span class="mui-tab-label">Talk</span>
+				</a>
+				<a class="comment-bottom-item" href="">
+					<span class="mui-icon iconfont icon-shoucang1"></span>
+					<span class="mui-tab-label">Save</span>
+				</a>
+				<a class="comment-bottom-item addTo" href="">
+					<span class="mui-tab-label">Add To Cart</span>
+				</a>
+				<a class="comment-bottom-item toPay" href="">
+					<span class="mui-tab-label">To pay</span>
+				</a>
+			</nav>	
+			<!-- 评论底部结束 -->
 			<div class="mui-content">
+				
 				<div class="detail-carousel">
 				 	<div class="swiper-container detail-banner-carousel">
 				        <div class="swiper-wrapper">
-				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
-				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
-				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
-				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+				            <div class="swiper-slide"><img src="images/lb.jpg" data-preview-src="" data-preview-group="1" alt=""></div>
+				            <div class="swiper-slide"><img src="images/lb.jpg" data-preview-src="" data-preview-group="1" alt=""></div>
+				            <div class="swiper-slide"><img src="images/lb.jpg" data-preview-src="" data-preview-group="1" alt=""></div>
+				            <div class="swiper-slide"><img src="images/lb.jpg" data-preview-src="" data-preview-group="1" alt=""></div>
 			    			</div>
 		    				<div class="swiper-pagination"></div>
 					</div>
 				</div>
+				
 				<div class="detail-infos">
 					<div class="detail-text-info">
 						<p class="title">Bluewater Spirit - The premium water purifier</p>
@@ -253,12 +279,12 @@
 					</div>
 					<p class="Details-info-title">Details</p>
 				</div>
-				<div class="mui-content-padded">
+				<div class="mui-content-padded product-detail-imgs">
 					<p>
-						<img src="images/details-img_01.png" data-preview-src="" data-preview-group="1" />
+						<img src="images/details-img_01.png" data-preview-src="" data-preview-group="2" />
 					</p>
 					<p>
-						<img src="images/details-img_02.png" data-preview-src="" data-preview-group="1" />
+						<img src="images/details-img_02.png" data-preview-src="" data-preview-group="2" />
 					</p>
 				</div>
 			</div>
@@ -272,14 +298,15 @@
 				mui.init({
 					swipeBack:true //启用右滑关闭功能
 				});
+				mui.previewImage();
 				var detailCarousel = new Swiper('.detail-banner-carousel',{
-					loop: true,
 					autoplay: 4000,
 					speed: 1000,
 					autoplayDisableOnInteraction: false,
-					paginationClickable :true				
+					paginationClickable :true,
+					pagination : '.swiper-pagination',
+					paginationType : 'fraction'				
 				});
-				mui.previewImage();
 				var detailMask = document.getElementById('detailMask');
 				var chooseColor = document.getElementById('chooseColor');
 				var chooseInfo = document.getElementById('chooseInfo');
@@ -298,25 +325,25 @@
 					chooseInfo.style.bottom = '-400px';
 				});
 				mui('.sub-add').on('tap','.sub',function(){
-	            var n = this.nextElementSibling.value;
-	            console.log(n);
-				var num = parseInt(n)-1;
-		        if (num == 1) {
-		           this.style.color = "#D5D5D5";
-		        }
-				if(num==0){
-		            return;
-		        }
-				this.nextElementSibling.value = num;
-
-	        });
-
-	        mui('.sub-add').on('tap','.add',function(){
-	            this.previousElementSibling.previousElementSibling.style.color = "#A9A9A9";
-			 	var n = this.previousElementSibling.value;
-			 	var num=parseInt(n)+1;
-			 	this.previousElementSibling.value = num;
-	        });
+		            var n = this.nextElementSibling.value || 2;
+		            console.log(n);
+					var num = parseInt(n)-1;
+			        if (num == 1) {
+			           this.style.color = "#D5D5D5";
+			        }
+					if(num==0){
+			            return;
+			        }
+					this.nextElementSibling.value = num;
+	
+		        });
+	
+		        mui('.sub-add').on('tap','.add',function(){
+		            this.previousElementSibling.previousElementSibling.style.color = "#A9A9A9";
+				 	var n = this.previousElementSibling.value || 1;
+				 	var num=parseInt(n)+1;
+				 	this.previousElementSibling.value = num;
+		        });
 				
 	        
 			})(mui);

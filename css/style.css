@@ -1517,7 +1517,7 @@ a {
 }
 .mui-comment-bottom .toPay {
  	background-color: #f6442b;
- 	width: 19%;
+ 	width: 18%;
  }
 
 
@@ -1785,6 +1785,33 @@ input:-ms-input-placeholder {
 /*加减组件结束*/ 
 
 /*详情页*/
+.detail-banner-carousel {
+	background-color: #E8E8E8;
+}
+
+.detail-banner-carousel .swiper-pagination {
+	color: #fff;
+}
+
+.detail-banner-carousel .swiper-container-horizontal>.swiper-pagination-bullets,
+.detail-banner-carousel .swiper-pagination-custom,
+.detail-banner-carousel .swiper-pagination-fraction {
+	bottom: 10px;
+    width: 60px;
+    background-color: #818181;
+    border-radius: 8px;
+    height: 30px;
+    right: 20px;
+    line-height: 30px;
+}
+
+.detail-banner-carousel .swiper-container-horizontal>.swiper-pagination-bullets,
+.detail-banner-carousel .swiper-pagination-custom, 
+.detail-banner-carousel .swiper-pagination-fraction {
+    bottom: 10px;
+    left: auto;
+}
+
 .detail-layout .iconfont.icon-gouwuche {
 	display: inline-block;
 	position: fixed;
@@ -1906,7 +1933,6 @@ input:-ms-input-placeholder {
 	-webkit-transition: all 0.2s;
 	background-color: #fff;
 	z-index: 50;
-	padding: 10px;
 }
 
 .detail-mask {
@@ -1931,7 +1957,7 @@ input:-ms-input-placeholder {
 }
 
 .choose-info-imgtext {
-	padding-bottom: 10px;
+	padding: 10px;
 	border-bottom: 1px solid #ececec;
 }
 
@@ -2011,13 +2037,17 @@ input:-ms-input-placeholder {
 }
 
 .choose-numbers {
-	padding: 10px 0;
+	padding: 10px;
 	border-bottom: 1px solid #ececec;
 }
 
 .choose-numbers > span {
 	height: 30px;
 	line-height: 30px;
+}
+
+.detail-banner-carousel img {
+	width: 100%;
 }
 
 /*媒体查询*/
