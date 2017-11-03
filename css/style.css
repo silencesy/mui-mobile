@@ -1519,18 +1519,40 @@ a {
  	background-color: #f6442b;
  	width: 18%;
  }
-
-
-
-
-
-
-
-
-
-
-
-
+.mui-bar-nav~.comment-content {
+	padding-top: 10px;
+}
+.comment-message, .comment-container {
+	padding-left: 15px;
+	color: #444;
+}
+.comment-container {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+.comment-message {
+	font-size: 14px;
+	color: #8f8f94;
+}
+.comment-message >span:nth-of-type(1) {
+	padding-right: 10px;
+}
+.comment-box-list .comment-name {
+	margin-bottom: 5px;
+}
+.comment-box-all {
+	margin-bottom: 10px;
+}
+.comment-img {
+	width: 100%;
+	margin-top: 10px;
+}
+.comment-img >img {
+	width: 32%;
+}
+.comment-content .comment-box:last-child {
+	margin-bottom: 60px;
+}
 /*商品评价结束*/
 
 /*no-address*/ 

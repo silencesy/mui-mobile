@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>search-result</title>
+	<title>comment</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -47,6 +47,7 @@
 			</a>
 		</nav>	
 		<!-- 评论底部结束 -->
+<<<<<<< HEAD
 		<div class="mui-content">
 
 
@@ -56,17 +57,74 @@
 
 		</div>	
 		
+=======
+		<div class="mui-content comment-content">
+			<div class="comment-box comment-box-all">
+				<div class="comment-box-list">
+					<p class="clearfix comment-name">
+						<img src="images/yl.png" alt="" />
+						<span>miller</span>
+					</p>
+					<div class="comment-message">
+						<span>2017-10-24</span>
+						<span>Color Category：Black</span>
+					</div>
+					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
+				</div>
+			</div>
+			<div class="comment-box comment-box-all">
+				<div class="comment-box-list">
+					<p class="clearfix comment-name">
+						<img src="images/yl.png" alt="" />
+						<span>miller</span>
+					</p>
+					<div class="comment-message">
+						<span>2017-10-24</span>
+						<span>Color Category：Black</span>
+					</div>
+					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
+				</div>
+			</div>
+			<div class="comment-box comment-box-all withImg">
+				<div class="comment-box-list">
+					<p class="clearfix comment-name">
+						<img src="images/yl.png" alt="" />
+						<span>miller</span>
+					</p>
+					<div class="comment-message">
+						<span>2017-10-24</span>
+						<span>Color Category：Black</span>
+					</div>
+					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
+					<div class="comment-img">
+						<img src="images/commit-img.jpg" alt="">
+						<img src="images/commit-img.jpg" alt="">
+						<img src="images/commit-img.jpg" alt="">
+<!-- 						<img src="images/commit-img.jpg" alt="">
+						<img src="images/commit-img.jpg" alt="">
+						<img src="images/commit-img.jpg" alt=""> -->
+					</div>
+				</div>
+			</div>
+		</div>	
+>>>>>>> a9be0415d978877c0217ac8c0fe4d957129ce683
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script>
 		$(function(){
 			$(".comment-title2").click(function() {
 	            $(".comment-title1").removeClass("comment-title-active");
-	            $(".comment-title2").addClass("comment-title-active");
+	            $(this).addClass("comment-title-active");
+				$.each($('.comment-box'),function(index,item){
+				    if($(this).hasClass('withImg') == false) {
+				        $(this).css("display","none");
+					}
+				});
 			});
 			$(".comment-title1").click(function() {
 	            $(".comment-title2").removeClass("comment-title-active");
-	            $(".comment-title1").addClass("comment-title-active");
+	            $(this).addClass("comment-title-active");
+	            $(".comment-box").css("display","block");
 			});
 	   	})		
 	</script>
