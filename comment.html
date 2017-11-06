@@ -10,12 +10,6 @@
 	<link rel="stylesheet" href="css/style.css">
 	<!-- 字体图标 -->
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_jmbdwkgo4etdquxr.css">
-	<style type="text/css">
-		#list {
-			/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
-			margin-top: -1px;
-		}
-	</style>
 </head>
 <body>
 	<div class="layout search-result-layout">
@@ -97,14 +91,11 @@
 					</div>
 					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
 					<div class="comment-img">
-						<img src="images/commit-img.jpg" alt="">
-						<img src="images/commit-img.jpg" alt="">
-						<img src="images/commit-img.jpg" alt="">
-<!-- 						<img src="images/commit-img.jpg" alt="">
-						<img src="images/commit-img.jpg" alt="">
-						<img src="images/commit-img.jpg" alt=""> -->
+						<img src="images/commit-img.jpg" alt="" data-preview-src="" data-preview-group="1">
+						<img src="images/commit-img.jpg" alt="" data-preview-src="" data-preview-group="1">
+						<img src="images/commit-img.jpg" alt="" data-preview-src="" data-preview-group="1">
 					</div>
-				</div>
+				</div>                                                       
 			</div>
 		</div>	
 
@@ -127,6 +118,14 @@
 	            $(".comment-box").css("display","block");
 			});
 	   	})		
+	</script>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.zoom.js"></script>
+	<script src="js/mui.previewimage.js"></script>
+	<script>
+		(function($) {
+			mui.previewImage();
+		})(mui);		
 	</script>
 </body>
 </html>
