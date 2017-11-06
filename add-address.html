@@ -25,13 +25,11 @@
 				<div class="mui-input-row">
 					<label>Full&nbsp;name：</label>
 					<input type="text"  id="name" placeholder="" >
-				</div>
-				
+				</div>				
 				<div class="mui-input-row">
 					<label>Phone&nbsp;number：</label>
 					<input type="text"  id="number" placeholder="" >
-				</div>
-				
+				</div>				
 				<!-- 三级联动开始 -->
 	    		<div id="showCityPicker3" class="mui-input-row">
 	    			<label class="region">Select&nbsp;region：</label>
@@ -53,26 +51,16 @@
 	<script src="js/mui.poppicker.js"></script>
 	<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
 	<script>
-
 		(function($, doc) {
 				$.init();
 				$.ready(function() {
-					/**
-					 * 获取对象属性的值
-					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
-					 * @param {Object} obj 对象
-					 * @param {String} param 属性名
-					 */
 					var _getParam = function(obj, param) {
 						return obj[param] || '';
-					};
-					
+					};					
 					var showUserPickerButton = doc.getElementById('showUserPicker');
 					var userResult = doc.getElementById('userResult');
 					
-					//-----------------------------------------
-				
-					//					//级联示例
+					//三级联动
 					var cityPicker3 = new $.PopPicker({
 						layer: 3
 					});
@@ -87,36 +75,33 @@
 						});
 					}, false);
 				});
-			})(mui, document);
+			})(mui, document);			
 			
-			
-//输入框校验开始
+			//输入框校验开始
 			var subto = document.getElementById('subto');
 			subto.addEventListener('tap',function() {
 				var tel = /^1[34578]\d{9}$/;
-//				console.log('ssssssssssss')
-			var name = document.getElementById('name').value;
-			var theNumber = document.getElementById('number').value;
-			var cityResult3 = document.getElementById('cityResult3').value;
-			var theTextarea = document.getElementById('textarea').value;
-			console.log(name,theNumber,cityResult3,theTextarea)
+				var name = document.getElementById('name').value;
+				var theNumber = document.getElementById('number').value;
+				var cityResult3 = document.getElementById('cityResult3').value;
+				var theTextarea = document.getElementById('textarea').value;
+				console.log(name,theNumber,cityResult3,theTextarea)
 				if(name == '') {
-					mui.toast('Full name cannot be empty');
+					mui.toast('Please enter your name!');
 					return false
 				}else if(!tel.test(theNumber)) {
-						mui.toast('Please enter the phone number in the correct format');
+						mui.toast('Please enter a 11-digit vaild number!');
 					return false
 				}else if(cityResult3 == '') {
-					mui.toast('Please select parts');
+					mui.toast('Please select your region!');
 					return false
-				}else if(theTextarea == '') {
-					
-					mui.toast('Please fill in the details');
+				}else if(theTextarea == '') {		
+					mui.toast('Please write down your detailed address!');
 					return false
 				}
 				return mui.toast('ok');
 			})
-//输入框校验结束
+			//输入框校验结束
 	</script>
 </body>
 </html>

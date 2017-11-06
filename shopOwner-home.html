@@ -11,6 +11,9 @@
 	<link rel="stylesheet" href="css/style.css">
 	<!-- 字体图标 -->
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_mdngvvut94ml5wmi.css">
+	<style>
+
+	</style>
 </head>
 <body>	
 	<div class="layout layout-shop-owner">
@@ -26,8 +29,9 @@
 				</a>	
 			</div>
 		</div>
-		<!-- 头部nav开始 -->
-		<nav class="mui-bar-top" id="mynav">
+		<!-- 头部置顶导航开始 -->
+		<div id="mainMenuBarAnchor"></div>
+		<div class="mui-bar-top" id="mainMenuBar">
 			<a class="mui-tab-item shop-nav" href="">
 				<span class="mui-tab-label">Homepage</span>
 			</a>
@@ -43,8 +47,8 @@
 			<a class="mui-tab-item shop-nav" href="">
 				<span class="mui-tab-label">Category</span>
 			</a>
-		</nav>
-		<!-- 头部nav结束 -->
+		</div>
+		<!-- 头部置顶导航结束 -->
 
 		<!-- 底部nav开始 -->
 		<nav class="mui-bar mui-bar-tab mui-bar-shop">
@@ -98,7 +102,9 @@
 	</div>
 	
 	<script src="js/swiper.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<script>
+		// 轮播
         var homeBannerCarousel = new Swiper('.home-banner-carousel',{
 			loop: true,
 			autoplay: 4000,
@@ -107,13 +113,25 @@
 			pagination : '.swiper-pagination',
 			paginationClickable :true				
 		});
-    </script>
-    <script src="js/jquery.1.7.2.min.js"></script>
-	<script src="js/navfix.js"></script>
-	<script>
-		$(document).ready(function(e) {
-			$('#mynav').navfix(0,999);    
-		});		
+        // 置顶导航栏
+	    $(document).ready(function() {
+	        var $window = $(window),
+	         	$mainMenuBar = $('#mainMenuBar'),
+	          	$mainMenuBarAnchor = $('#mainMenuBarAnchor');
+	      	$window.scroll(function() {
+	          	var window_top = $window.scrollTop();
+	          	var div_top = $mainMenuBarAnchor.offset().top;
+	          	console.log(div_top);
+	          	if (window_top > div_top) {
+	              	$mainMenuBar.addClass('stick');
+	              	$mainMenuBarAnchor.height($mainMenuBar.height());
+	          	}else {
+	              	$mainMenuBar.removeClass('stick');
+	              	$mainMenuBarAnchor.height(0);
+	          	}
+	  		});
+	    });
+		// 收藏
 		$(function(){
 			$(".icon-shoucang").click(function(){
 			  $(".icon-shoucang").toggleClass("icon-shoucang1");
