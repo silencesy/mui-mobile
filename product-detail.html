@@ -192,7 +192,10 @@
 						<span>Adult Ticket</span>
 						<span>Child Ticket</span>
 						<span>Adult Ticket</span>
-						
+						<span>Adult Ticket</span>
+						<span>Adult Ticket</span>
+						<span>Adult Ticket</span>
+
 					</p>
 				</div>
 				<div class="choose-numbers clearfix">
@@ -207,9 +210,17 @@
 					<span>Add To Cart</span>
 					<span>To Pay</span>
 				</div>
+				<!-- <div class="car-buy">
+					<span>Add To Cart</span>
+					<span>To Pay</span>
+				</div>
+				<div class="car-buy">
+					<span>Add To Cart</span>
+					<span>To Pay</span>
+				</div> -->
 			</div>
 			<!-- 评论底部开始 -->
-			<nav class="mui-bar mui-comment-bottom">
+			<nav class="mui-bar mui-bar-tab mui-comment-bottom">
 				<a class="comment-bottom-item" href="">
 					<span class="mui-icon iconfont icon-shanghu1"></span>
 					<span class="mui-tab-label">Homepage</span>
@@ -260,7 +271,7 @@
 							</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class="mui-navigate-right">
+							<a href="comment.html" class="mui-navigate-right">
 								Comment（<em>2341</em>）
 							</a>
 						</li>
@@ -268,12 +279,12 @@
 					<div class="comment-box">
 						<div class="comment-box-list">
 							<p class="clearfix">
-							<img src="images/yl.png" alt="" />
+							<img src="images/help2_07.png" alt="" />
 							<span>miller</span>
 							</p>
 							<p>Comment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment Comment</p>
 							<p class="more-comment-box">
-								<a href="#" class="more-comment">Read More</a>
+								<a href="comment.html" class="more-comment">Read More</a>
 							</p>
 						</div>
 					</div>
@@ -281,10 +292,10 @@
 				</div>
 				<div class="mui-content-padded product-detail-imgs">
 					<p>
-						<img src="images/details-img_01.png" data-preview-src="" data-preview-group="2" />
+						<img src="images/details-img_01.png"/>
 					</p>
 					<p>
-						<img src="images/details-img_02.png" data-preview-src="" data-preview-group="2" />
+						<img src="images/details-img_02.png"/>
 					</p>
 				</div>
 			</div>
@@ -298,6 +309,9 @@
 				mui.init({
 					swipeBack:true //启用右滑关闭功能
 				});
+				// mui('body').on('tap','a',function(){
+		  //           window.location.href = this.getAttribute('href');
+		  //      	});
 				mui.previewImage();
 				var detailCarousel = new Swiper('.detail-banner-carousel',{
 					autoplay: 4000,
@@ -335,6 +349,7 @@
 			            return;
 			        }
 					this.nextElementSibling.value = num;
+					return false;
 	
 		        });
 	
@@ -343,6 +358,7 @@
 				 	var n = this.previousElementSibling.value || 1;
 				 	var num=parseInt(n)+1;
 				 	this.previousElementSibling.value = num;
+				 	return false;
 		        });
 				
 	        

@@ -1503,7 +1503,11 @@ a {
     font-size: 24px;
     z-index: 20;
 }
-.comment-bottom-item .mui-icon~.mui-tab-label {
+
+.mui-comment-bottom .comment-bottom-item {
+	margin-right: 0;
+}
+.mui-comment-bottom .comment-bottom-item .mui-icon~.mui-tab-label {
     font-size: 11px;
     display: block;
 }
@@ -1514,10 +1518,11 @@ a {
 .mui-comment-bottom .addTo {
 	background-color: #f6b12b;	
 	width: 28%;
+	font-size: 14px;
 }
 .mui-comment-bottom .toPay {
  	background-color: #f6442b;
- 	width: 18%;
+	font-size: 14px;
  }
 .mui-bar-nav~.comment-content {
 	padding-top: 10px;
@@ -2104,6 +2109,12 @@ input:-ms-input-placeholder {
 	.home-search-group input {
 		width: 73%;
 	}
+	.mui-comment-bottom .addTo {
+		font-size: 16px;
+	}
+	.mui-comment-bottom .toPay {
+		font-size: 16px;
+	 }
     
 
 }
