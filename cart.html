@@ -177,7 +177,7 @@
 
 
 	<script src="js/mui.min.js"></script>
-
+	<script src="js/h.js"></script>
 	<script>
 		
 		
@@ -221,6 +221,7 @@
 				var doDelete = document.getElementById('doDelete');
 				var doDelete = document.getElementById('doDelete');
 				doneBtn.style.display = 'block';
+				// h('#doneBtn').show();
 				toPay.style.display = 'none';
 				doDelete.style.display = 'block';
 				this.style.display = "none";
@@ -234,7 +235,7 @@
 			
 			$('#header').on('tap', '#doneBtn', function(event) {
 				var editBtn = document.getElementById('editBtn');
-//				var doneBtn = document.getElementById('doneBtn');
+				var doneBtn = document.getElementById('doneBtn');
 				var doDelete = document.getElementById('doDelete');
 				var doDelete = document.getElementById('doDelete');
 
@@ -250,16 +251,22 @@
 				});
 			});
 			
-			var doDelete = document.getElementById('doDelete');
-			mui('#checkAll').on('tap','#doDelete',function(){
-				var checkbox=document.getElementsByClassName('listCheckBox');
-				for(var i=0;i<checkbox.length;i++){ 
-					if(checkbox[i].checked==true){ 
-//						checkbox[i];
-						console.log(1);
-					} 
-				}
+			h('#doDelete').tap(function(){
+				h('#cartList').find('.listCheckBox').each(function(obj){
+				    // //获得原生dom
+				    // console.log(obj.index);
+				    // //可以继续使用选择器进行dom操作
+				    // h(obj).css({color:'#090'});
+				    if (obj.checked) {
+				    	var index2 = Number(obj.index);
+				    	h('.listCheckBox').eq(index2).parent('li').remove();
+				    	console.log(h('.listCheckBox').eq(index2).parent('li'));
+				    }
+
+				});
 			});
+
+
 			
 			mui('.settlement-box').on('change', 'input', function() {
 				var value = this.checked;
@@ -280,7 +287,7 @@
 
 			});
 			
-//			所有选项选中all亮 
+			//所有选项选中all亮 
 			function AllLight() {
 				var checkAllInput = document.getElementById('checkAllInput');
 				var flag = 0;
@@ -299,7 +306,7 @@
 			}
 			
 			
-			//			购物车加减
+			//购物车加减
 			mui('.sub-add').on('tap','.sub',function(){
 	            var n = this.nextElementSibling.value;
 	            console.log(n);
@@ -331,7 +338,7 @@
 	            window.location.href = this.getAttribute('href');
 	        });
 			
-			//			购物车空跳转空购物车
+			//购物车空跳转空购物车
 	        function cartIsEmpty () {
 		        if (mui('.mui-table-view-cell').length===0) {
 		            location.href="cart-empty.html";//跳到空的购物车页面
@@ -339,7 +346,7 @@
 		    }
 
 			
-			//			算总价格
+			//算总价格
 		    function checkedValues(){ 
 				var arr=new Array(); 
 				var arr2=new Array(); 

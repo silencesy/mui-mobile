@@ -1519,10 +1519,12 @@ a {
 	background-color: #f6b12b;	
 	width: 28%;
 	font-size: 14px;
+	height: 50px;
 }
 .mui-comment-bottom .toPay {
  	background-color: #f6442b;
 	font-size: 14px;
+	height: 50px;
  }
 .mui-bar-nav~.comment-content {
 	padding-top: 10px;
@@ -1843,7 +1845,7 @@ input:-ms-input-placeholder {
 	display: inline-block;
 	position: fixed;
 	right: 20px;
-	top: 60px;
+	bottom: 80px;
 	background-color: #999;
 	color: #fff;
 	width: 50px;
@@ -1959,7 +1961,7 @@ input:-ms-input-placeholder {
 	transition: all 0.2s;
 	-webkit-transition: all 0.2s;
 	background-color: #fff;
-	z-index: 50;
+	z-index: 20;
 }
 
 .detail-mask {
@@ -1971,7 +1973,7 @@ input:-ms-input-placeholder {
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	z-index: 40;
+	z-index: 19;
 	display: none;
 	background-color: rgba(0,0,0,0.34);
 }
@@ -2043,6 +2045,7 @@ input:-ms-input-placeholder {
 .car-buy {
 	margin-top: 10px;
 	width: 100%;
+	display: none;
 }
 
 .car-buy span {
@@ -2076,6 +2079,14 @@ input:-ms-input-placeholder {
 
 .detail-banner-carousel img {
 	width: 100%;
+}
+
+.car-buy.base span{
+	width: 100%;
+}
+
+.car-buy-pay > span {
+	background-color: #f6442b !important;
 }
 
 /*媒体查询*/

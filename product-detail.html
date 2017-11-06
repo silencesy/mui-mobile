@@ -176,48 +176,45 @@
 			
 			<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">5</span></span>
 			<div id='detailMask' class="detail-mask"></div>
-			<div class="choose-info" id="chooseInfo">
+			<div class="choose-info" id="chooseInfo" productId='123'>
 				<span class="iconfont icon-guanbi" id="closeChoose"></span>
 				<div class="choose-info-imgtext clearfix">
-					<img class="choose-info-img" src="images/lb.jpg" alt="" />
+					<img id="CategoryPic" class="choose-info-img" src="images/home-product1.jpg" alt="" data-preview-src="images/home-product1.jpg" data-preview-group="2" />
 					<div class="choose-info-text">
-						<p>￥<em>300</em></p>
-						<p>Stock 50(items) </p>
+						<p>￥<em id="CategoryPrice">300</em></p>
+						<p>Stock <em id="inStock">50</em> (items) </p>
 					</div>
 				</div>
 				<div class="choose-classification">
 					<p>Type</p>
-					<p>
-						<span class="active">Child Ticket</span>
-						<span>Adult Ticket</span>
-						<span>Child Ticket</span>
-						<span>Adult Ticket</span>
-						<span>Adult Ticket</span>
-						<span>Adult Ticket</span>
-						<span>Adult Ticket</span>
-
+					<p id="productClassList">
+						<span class="leixing active" price="300" stock="2" Category='123' imgsrc="images/home-product1.jpg" bigImgSrc='images/home-product1.jpg'>Child Ticket</span>
+						<span class="leixing" price="3020" stock="2" Category='1' imgsrc="images/home-product2.jpg" bigImgSrc='images/home-product2.jpg'>Adult Ticket</span>
+						<span class="leixing" price="3010" stock="3" Category='2' imgsrc="images/home-product3.jpg" bigImgSrc='images/home-product3.jpg'>Child Ticket</span> 
+						<span class="leixing" price="3200" stock="4" Category='3' imgsrc="images/home-product1.jpg" bigImgSrc='images/home-product1.jpg'>Adult Ticket</span> 
+						<span class="leixing" price="3100" stock="5" Category='4' imgsrc="images/home-product2.jpg" bigImgSrc='images/home-product2.jpg'>Adult Ticket</span> 
+						<span class="leixing" price="3300" stock="6" Category='5' imgsrc="images/home-product3.jpg" bigImgSrc='images/home-product3.jpg'>Adult Ticket</span> 
+						<span class="leixing" price="3020" stock="7" Category='56' imgsrc="images/home-product1.jpg" bigImgSrc='images/home-product1.jpg'>Adult Ticket</span> 
 					</p>
 				</div>
 				<div class="choose-numbers clearfix">
 					<span class="fl">Quantity</span>
 					<div class="sub-add show fr">
 						<i class="iconfont icon-icon sub"></i>
-						<input type="text" value="1">
+						<input id="productNumber" type="text" value="1">
 						<i class="iconfont icon-jia add"></i>
 					</div>
 				</div>
-				<div class="car-buy">
-					<span>Add To Cart</span>
-					<span>To Pay</span>
+				<div class="car-buy" id="maskAddPay">
+					<span id="addCartBtn">Add To Cart</span>
+					<span id="toPayBtn">To Pay</span>
 				</div>
-				<!-- <div class="car-buy">
-					<span>Add To Cart</span>
-					<span>To Pay</span>
+				<div class="car-buy base" id="maskAddTo">
+					<span id="addCartBtn2">Done</span>
 				</div>
-				<div class="car-buy">
-					<span>Add To Cart</span>
-					<span>To Pay</span>
-				</div> -->
+				<div class="car-buy base car-buy-pay" id="maskToPay">
+					<span id="toPayBtn2">Done</span>
+				</div>
 			</div>
 			<!-- 评论底部开始 -->
 			<nav class="mui-bar mui-bar-tab mui-comment-bottom">
@@ -233,10 +230,10 @@
 					<span class="mui-icon iconfont icon-shoucang1"></span>
 					<span class="mui-tab-label">Save</span>
 				</a>
-				<a class="comment-bottom-item addTo" href="">
+				<a class="comment-bottom-item addTo" href="" id="addTo">
 					<span class="mui-tab-label">Add To Cart</span>
 				</a>
-				<a class="comment-bottom-item toPay" href="">
+				<a class="comment-bottom-item toPay" href="" id="toPay">
 					<span class="mui-tab-label">To pay</span>
 				</a>
 			</nav>	
@@ -284,7 +281,7 @@
 							</p>
 							<p>Comment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment Comment</p>
 							<p class="more-comment-box">
-								<a href="comment.html" class="more-comment">Read More</a>
+								<a href="https://www.baidu.com/" class="more-comment">Read More</a>
 							</p>
 						</div>
 					</div>
@@ -304,14 +301,13 @@
 		<script src="js/swiper.min.js"></script>
 		<script src="js/mui.zoom.js"></script>
 		<script src="js/mui.previewimage.js"></script>
+		<script src="js/h.js"></script>
 		<script type="text/javascript">
 			(function($) {
 				mui.init({
 					swipeBack:true //启用右滑关闭功能
 				});
-				// mui('body').on('tap','a',function(){
-		  //           window.location.href = this.getAttribute('href');
-		  //      	});
+
 				mui.previewImage();
 				var detailCarousel = new Swiper('.detail-banner-carousel',{
 					autoplay: 4000,
@@ -321,23 +317,111 @@
 					pagination : '.swiper-pagination',
 					paginationType : 'fraction'				
 				});
-				var detailMask = document.getElementById('detailMask');
-				var chooseColor = document.getElementById('chooseColor');
-				var chooseInfo = document.getElementById('chooseInfo');
-				chooseColor.addEventListener('tap',function() {
-					detailMask.style.display = "block";
-					chooseInfo.style.bottom = 0;
+				h('#chooseColor').tap(function(){
+					h('#maskToPay').hide();
+					h('#maskAddTo').hide();
+					h('#maskAddPay').show();
+					productChoosemask();
+				});
+				h('#addTo').tap(function(){
+					h('#maskToPay').hide();
+					h('#maskAddPay').hide();
+					h('#maskAddTo').show();
+					productChoosemask();
+				});
+				h('#toPay').tap(function(){
+					
+					h('#maskAddPay').hide();
+					h('#maskAddTo').hide();
+					h('#maskToPay').show();
+					productChoosemask();
 				});
 
-				closeChoose.addEventListener('tap',function(){
-					detailMask.style.display = "none";
-					chooseInfo.style.bottom = '-400px';
-				})
-				
-				detailMask.addEventListener('tap',function() {
-					detailMask.style.display = "none";
-					chooseInfo.style.bottom = '-400px';
+				// 加入购物车
+				h('#addCartBtn').tap(function(){
+					mui.toast('加入购物车成功');
+					var productId = h('#chooseInfo').attr('productId');
+					var productNumber = h('#productNumber').val();
+					var Category = '';
+					h('#productClassList').find('span').each(function(obj){
+					   
+					    if(h(obj).hasClass('active')) {
+					    	Category = h(obj).attr('Category');
+					    }
+					});
+					console.log(productId,productNumber,Category);
+					closeMask ();
 				});
+				h('#addCartBtn2').tap(function(){
+					var productId = h('#chooseInfo').attr('productId');
+					var productNumber = h('#productNumber').val();
+					var Category = '';
+					h('#productClassList').find('span').each(function(obj){
+					    
+					    if(h(obj).hasClass('active')) {
+					    	Category = h(obj).attr('Category');
+					    }
+					});
+					console.log(productId,productNumber,Category);
+					mui.toast('加入购物车成功');
+					closeMask ();
+				});
+				// 购买
+				h('#toPayBtn').tap(function(){
+					var productId = h('#chooseInfo').attr('productId');
+					var productNumber = h('#productNumber').val();
+					var Category = '';
+					h('#productClassList').find('span').each(function(obj){
+					   
+					    if(h(obj).hasClass('active')) {
+					    	Category = h(obj).attr('Category');
+					    }
+					});
+					console.log(productId,productNumber,Category);
+					closeMask ();
+				});
+				h('#toPayBtn2').tap(function(){
+					var productId = h('#chooseInfo').attr('productId');
+					var productNumber = h('#productNumber').val();
+					var Category = '';
+					h('#productClassList').find('span').each(function(obj){
+					    
+					    if(h(obj).hasClass('active')) {
+					    	Category = h(obj).attr('Category');
+					    }
+					});
+					console.log(productId,productNumber,Category);
+					closeMask ();
+				});
+				// 点击关闭按钮关闭弹出层
+				h('#closeChoose').tap(function(){
+					closeMask ();
+				});
+				// 点击遮罩层关闭弹出层
+				h('#detailMask').tap(function(){
+					closeMask ();
+				});
+
+				// 关闭弹出层
+				function closeMask () {
+					h('#detailMask').hide();
+					h('#chooseInfo').css({"bottom":'-420px'});
+				}
+				mui('#productClassList').on('tap',".leixing",function(){
+					h('#productClassList').find('span').each(function(obj){
+					    h(obj).removeClass('active');
+					});
+					h(this).addClass('active');
+					h('#CategoryPrice').html(h(this).attr('price'));
+					h('#inStock').html(h(this).attr('stock'));
+					h('#CategoryPic').attr("src",h(this).attr('imgsrc'));
+					h('#CategoryPic').attr("data-preview-src",h(this).attr('bigImgSrc'));
+				})
+				function productChoosemask() {
+				// 弹出选择信息
+					h('#detailMask').show();
+					h('#chooseInfo').css({"bottom":0});
+				}
 				mui('.sub-add').on('tap','.sub',function(){
 		            var n = this.nextElementSibling.value || 2;
 		            console.log(n);
@@ -352,7 +436,6 @@
 					return false;
 	
 		        });
-	
 		        mui('.sub-add').on('tap','.add',function(){
 		            this.previousElementSibling.previousElementSibling.style.color = "#A9A9A9";
 				 	var n = this.previousElementSibling.value || 1;
@@ -360,8 +443,6 @@
 				 	this.previousElementSibling.value = num;
 				 	return false;
 		        });
-				
-	        
 			})(mui);
 		</script>
 	</body>
