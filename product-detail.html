@@ -174,7 +174,7 @@
 	
 		<div class="layout detail-layout">
 			
-			<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">5</span></span>
+			<span id="goCartLogo" class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">5</span></span>
 			<div id='detailMask' class="detail-mask"></div>
 			<div class="choose-info" id="chooseInfo" productId='123'>
 				<span class="iconfont icon-guanbi" id="closeChoose"></span>
@@ -255,7 +255,7 @@
 				<div class="detail-infos">
 					<div class="detail-text-info">
 						<p class="title">Bluewater Spirit - The premium water purifier</p>
-						<p class="price">¥ 450</p>
+						<p class="price">¥ 450-600</p>
 						<p class="clearfix">
 							<span class="fl">Shipping: ¥ <em>5.00</em></span>
 							<span class="fr">Shanghai</span>
@@ -281,7 +281,7 @@
 							</p>
 							<p>Comment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment Comment</p>
 							<p class="more-comment-box">
-								<a href="https://www.baidu.com/" class="more-comment">Read More</a>
+								<a href="./comment.html" id="readMore" class="more-comment">Read More</a>
 							</p>
 						</div>
 					</div>
@@ -317,6 +317,13 @@
 					pagination : '.swiper-pagination',
 					paginationType : 'fraction'				
 				});
+				h('#goCartLogo').tap(function(){
+					window.location.href= "./cart.html";
+				});
+				h('#readMore').tap(function(){
+					window.location.href= this.href;
+				});
+
 				h('#chooseColor').tap(function(){
 					h('#maskToPay').hide();
 					h('#maskAddTo').hide();

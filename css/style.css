@@ -618,8 +618,9 @@ a {
     left: 0;
     margin: auto;
     display: inline-block;
-    width: 28px;
-    height: 26px;
+    width: 35px;
+    height: 70px;
+    line-height: 70px;
     border: 0;
     outline: 0!important;
     background-color: transparent;
@@ -665,7 +666,7 @@ a {
 
 .settlement-box .total {
 	color: #919191;
-	width: 25%;
+	width: 30%;
 	float: left;
 	height: 50px;
 	line-height: 50px;
@@ -1157,9 +1158,9 @@ a {
 	background-color: transparent;
 }
 
-.icon-gouwuche {
- 	color: #ff0000;
- }
+// .icon-gouwuche {
+//  	color: #ff0000;
+//  }
 .water-left {
 	float: left;
 	color: #ff0000;
@@ -1300,6 +1301,7 @@ a {
 .stick {
 	position: fixed;
 	top: 0;
+	max-width: 640px;
 }
 .mui-bar-top .shop-nav {
 	line-height: 50px;
@@ -2211,6 +2213,17 @@ input:-ms-input-placeholder {
 	-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
 	transition: transform 0.5s ease, opacity 0.5s ease;
 }
+
+/* 订单页 */ 
+.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+	background-color: #f6442b;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	color: #f6442b;
+}
+
+
 @-webkit-keyframes fadeIn {
 	0% {
 		opacity: 0;

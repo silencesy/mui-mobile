@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>That's Mart</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<style>
+		.mui-control-content {
+			background-color: white;
+			min-height: 500px;
+		}
+		.mui-control-content .mui-loading {
+			margin-top: 50px;
+		}
+	</style>
+	<body>
+		<div class="layout cart-layout">
+			<div class="mui-content">
+				<div id="slider" class="mui-slider">
+					<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							All
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							Unpaid
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							Paid
+						</a>
+						<a class="mui-control-item" href="#item4mobile">
+							Deliverd
+						</a>
+					</div>
+					<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+					<div class="mui-slider-group">
+						<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+							<div id="scroll1" class="mui-scroll-wrapper">
+								<div class="mui-scroll">
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+									<p>123123123</p>
+								</div>
+							</div>
+						</div>
+						<div id="item2mobile" class="mui-slider-item mui-control-content">
+							<div id="scroll2" class="mui-scroll-wrapper">
+								<div class="mui-scroll">
+									<div class="mui-loading">
+										<div class="mui-spinner">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div id="item3mobile" class="mui-slider-item mui-control-content">
+							<div id="scroll3" class="mui-scroll-wrapper">
+								<div class="mui-scroll">
+									<div class="mui-loading">
+										<div class="mui-spinner">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div id="item4mobile" class="mui-slider-item mui-control-content">
+							<div id="scroll4" class="mui-scroll-wrapper">
+								<div class="mui-scroll">
+									<div class="mui-loading">
+										<div class="mui-spinner">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: false
+			});
+			(function($) {
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
+				});
+				var html2 = '123';
+				var html3 = '456';
+				var html4 = '789';
+				var item2 = document.getElementById('item2mobile');
+				var item3 = document.getElementById('item3mobile');
+				var item4 = document.getElementById('item4mobile');
+				document.getElementById('slider').addEventListener('slide', function(e) {
+					if (e.detail.slideNumber === 1) {
+						if (item2.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item2.querySelector('.mui-scroll').innerHTML = html2;
+							}, 500);
+						}
+					} else if (e.detail.slideNumber === 2) {
+						if (item3.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item3.querySelector('.mui-scroll').innerHTML = html3;
+							}, 500);
+						}
+					} else if (e.detail.slideNumber === 3) {
+						if (item4.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item4.querySelector('.mui-scroll').innerHTML = html4;
+							}, 500);
+						}
+					}
+				});
+				var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+				
+			})(mui);
+		</script>
+	</body>
+
+</html>
