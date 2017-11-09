@@ -1026,6 +1026,9 @@ a {
     padding-bottom: 0;
     margin-bottom: 20px;
 }
+.order-add >p {
+	color: #000;
+}
 .order-add >span {
 	font-size: 15px;
 }
@@ -1294,6 +1297,7 @@ a {
 	padding: 0;
     background-color: #fff;
     width: 100%;
+    max-width: 640px;
     overflow: hidden;
     z-index: 100;
 }
@@ -2261,13 +2265,30 @@ p img {
 .car-buy-pay > span {
 	background-color: #f6442b !important;
 }
+/*收藏开始*/
+.collection .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+    background-color: #f6442b;
+}
+.collection .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	color: #f6442b;
+}
+.collection .mui-slider-indicator.mui-segmented-control {
+	background-color: #fff;
+}
+
+
+
+
+/*收藏结束*/
 
 /*媒体查询*/
 @media screen and (max-width: 320px){
 	.z_photo {
     	width: 91%;
 	}
-    
+    .orders-content a {
+    	margin-left: 5px;
+    }
 
 }
 @media screen and (min-width: 320px) and (max-width: 480px){
